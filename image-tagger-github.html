@@ -366,30 +366,27 @@
         </div>
     </div>
 
-    <div class="setup-section" id="setup-section">
+    <div class="setup-section" id="password-section">
+        <h2>Portfolio Image Tagger</h2>
+        <p style="margin-bottom: 20px; color: #999;">Enter the password to access the tagging interface.</p>
+        
+        <label>Password</label>
+        <input type="password" id="access-password" placeholder="Enter password">
+        
+        <button onclick="checkPassword()">Unlock</button>
+    </div>
+
+    <div class="setup-section hidden" id="setup-section">
         <h2>Connect to GitHub</h2>
-        <p style="margin-bottom: 20px; color: #999;">Enter your GitHub repository details to enable auto-save.</p>
-        
-        <label>Repository Owner (username)</label>
-        <input type="text" id="github-owner" placeholder="e.g., yourusername">
-        <div class="help-text">Your GitHub username</div>
-        
-        <label>Repository Name</label>
-        <input type="text" id="github-repo" placeholder="e.g., william-portfolio-tagger">
-        <div class="help-text">The name of the repository containing manifest.json</div>
-        
-        <label>Branch</label>
-        <input type="text" id="github-branch" value="main" placeholder="main">
-        <div class="help-text">Usually "main" or "master"</div>
+        <p style="margin-bottom: 20px; color: #999;">Enter your access token to enable auto-save.</p>
         
         <label>Personal Access Token</label>
         <input type="password" id="github-token" placeholder="ghp_...">
         <div class="help-text">
-            Create a fine-grained token at github.com/settings/tokens with Contents: Read and write permissions.
-            <br>This stays in your browser and is never sent anywhere except GitHub.
+            Paste the access token here. Your work will auto-save to GitHub every 30 seconds.
         </div>
         
-        <button onclick="connectGitHub()">Connect & Load Manifest</button>
+        <button onclick="connectGitHub()">Connect</button>
     </div>
 
     <div class="controls hidden" id="controls">
@@ -409,6 +406,15 @@
     </div>
 
     <script>
+        // CONFIGURATION - Update these values for your repository
+        const REPO_CONFIG = {
+            owner: 'Vandrina',  // Replace with your GitHub username
+            repo: 'william-portfolio-tagger',  // Replace with your repo name
+            branch: 'main'  // Usually 'main' or 'master'
+        };
+        
+        const ACCESS_PASSWORD = 'portfolio';  // Change this to whatever password you want
+        
         let manifestData = [];
         let allDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
         let allClients = new Set();
@@ -418,22 +424,32 @@
         let hasUnsavedChanges = false;
         let manifestSHA = null;
 
+        function checkPassword() {
+            const password = document.getElementById('access-password').value;
+            if (password === ACCESS_PASSWORD) {
+                document.getElementById('password-section').classList.add('hidden');
+                document.getElementById('setup-section').classList.remove('hidden');
+            } else {
+                alert('Incorrect password. Please try again.');
+                document.getElementById('access-password').value = '';
+            }
+        }
+
         async function connectGitHub() {
-            const owner = document.getElementById('github-owner').value.trim();
-            const repo = document.getElementById('github-repo').value.trim();
-            const branch = document.getElementById('github-branch').value.trim() || 'main';
             const token = document.getElementById('github-token').value.trim();
 
-            if (!owner || !repo || !token) {
-                alert('Please fill in all fields');
+            if (!token) {
+                alert('Please enter your access token');
                 return;
             }
 
-            githubConfig = { owner, repo, branch, token };
+            githubConfig = {
+                owner: REPO_CONFIG.owner,
+                repo: REPO_CONFIG.repo,
+                branch: REPO_CONFIG.branch,
+                token: token
+            };
             
-            // Save config to localStorage for convenience (except token for security)
-            localStorage.setItem('githubConfig', JSON.stringify({ owner, repo, branch }));
-
             setStatus('Loading manifest from GitHub...', 'saving');
 
             try {
@@ -770,15 +786,14 @@
             window.open(`https://github.com/${githubConfig.owner}/${githubConfig.repo}/commits/${githubConfig.branch}/manifest.json`, '_blank');
         }
 
-        // Load saved config on page load
-        window.addEventListener('load', () => {
-            const saved = localStorage.getItem('githubConfig');
-            if (saved) {
-                const config = JSON.parse(saved);
-                document.getElementById('github-owner').value = config.owner || '';
-                document.getElementById('github-repo').value = config.repo || '';
-                document.getElementById('github-branch').value = config.branch || 'main';
-            }
+        // Allow Enter key on password field
+        document.getElementById('access-password')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // Allow Enter key on token field
+        document.getElementById('github-token')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') connectGitHub();
         });
 
         // Clean up timer on page unload
