@@ -9,7 +9,7 @@
     "thumbHeight": 371,
     "aspectRatio": 1.6151,
     "thumbAspectRatio": 1.6173,
-    "discipline": "test",
+    "discipline": "backgrounds",
     "clients": [
       "agency"
     ],
@@ -5881,9 +5881,9 @@
     "sort": 999
   },
   {
-    "file": "images/toy-design/120. HÉLIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. HÉLIO CASTRONEVES.png",
-    "placeholder": "gallery-blur-placeholders/toy-design/120. HÉLIO CASTRONEVES.png",
+    "file": "images/toy-design/120. HÃLIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HÃLIO CASTRONEVES.png",
+    "placeholder": "gallery-blur-placeholders/toy-design/120. HÃLIO CASTRONEVES.png",
     "width": 2560,
     "height": 1082,
     "thumbWidth": 600,
