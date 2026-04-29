@@ -408,12 +408,12 @@
     <script>
         // CONFIGURATION - Update these values for your repository
         const REPO_CONFIG = {
-            owner: 'vandrina',  // Replace with your GitHub username
+            owner: 'YOUR_GITHUB_USERNAME',  // Replace with your GitHub username
             repo: 'william-portfolio-tagger',  // Replace with your repo name
             branch: 'main'  // Usually 'main' or 'master'
         };
         
-        const ACCESS_PASSWORD = 'portfolio';  // Change this to whatever password you want
+        const ACCESS_PASSWORD = 'portfolio2025';  // Change this to whatever password you want
         
         let manifestData = [];
         let allDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
@@ -423,6 +423,29 @@
         let autoSaveTimer = null;
         let hasUnsavedChanges = false;
         let manifestSHA = null;
+
+        // Load custom disciplines and clients from localStorage
+        function loadCustomOptions() {
+            const savedDisciplines = localStorage.getItem('customDisciplines');
+            const savedClients = localStorage.getItem('customClients');
+            
+            if (savedDisciplines) {
+                JSON.parse(savedDisciplines).forEach(d => allDisciplines.add(d));
+            }
+            
+            if (savedClients) {
+                JSON.parse(savedClients).forEach(c => allClients.add(c));
+            }
+        }
+
+        // Save custom disciplines and clients to localStorage
+        function saveCustomOptions() {
+            localStorage.setItem('customDisciplines', JSON.stringify(Array.from(allDisciplines)));
+            localStorage.setItem('customClients', JSON.stringify(Array.from(allClients)));
+        }
+
+        // Initialize on page load
+        loadCustomOptions();
 
         function checkPassword() {
             const password = document.getElementById('access-password').value;
@@ -472,8 +495,22 @@
                 const content = atob(data.content);
                 manifestData = JSON.parse(content);
 
-                // Extract existing clients
+                // Convert old single discipline to array format if needed
                 manifestData.forEach(item => {
+                    // Convert single discipline string to array
+                    if (item.discipline && typeof item.discipline === 'string') {
+                        item.disciplines = [item.discipline];
+                        delete item.discipline;
+                    } else if (!item.disciplines) {
+                        item.disciplines = [];
+                    }
+                    
+                    // Collect all existing disciplines
+                    if (item.disciplines && Array.isArray(item.disciplines)) {
+                        item.disciplines.forEach(d => allDisciplines.add(d));
+                    }
+                    
+                    // Extract existing clients
                     if (item.clients && Array.isArray(item.clients)) {
                         item.clients.forEach(client => allClients.add(client));
                     }
@@ -594,7 +631,7 @@
             card.className = 'image-card';
             card.id = `card-${index}`;
             
-            const isComplete = item.discipline && 
+            const isComplete = item.discipline && (Array.isArray(item.discipline) ? item.discipline.length > 0 : true) && 
                               item.clients && item.clients.length > 0 && 
                               item.keywords && item.keywords.length > 0;
             
@@ -613,7 +650,7 @@
                         <div class="filename">${item.file}</div>
                         <div class="current-tags">
                             ${item.title ? `Title: ${item.title} | ` : ''}
-                            Discipline: ${item.discipline || 'none'} | 
+                            Disciplines: ${item.discipline && (Array.isArray(item.discipline) ? item.discipline.length : 1) ? (Array.isArray(item.discipline) ? item.discipline.join(', ') : item.discipline) : 'none'} | 
                             Clients: ${item.clients && item.clients.length ? item.clients.join(', ') : 'none'} | 
                             Keywords: ${item.keywords && item.keywords.length ? item.keywords.length + ' keyword(s)' : 'none'}
                             ${isComplete ? '<span class="complete-badge">✓ COMPLETE</span>' : ''}
@@ -627,14 +664,17 @@
                 </div>
 
                 <div class="tag-section">
-                    <h3>Discipline (select one)</h3>
+                    <h3>Disciplines (select multiple)</h3>
                     <div class="checkbox-group" id="disciplines-${index}">
-                        ${Array.from(allDisciplines).map(d => `
+                        ${Array.from(allDisciplines).map(d => {
+                            const isChecked = (Array.isArray(item.discipline) && item.discipline.includes(d)) || 
+                                            (typeof item.discipline === 'string' && item.discipline === d);
+                            return `
                             <label class="checkbox-label">
-                                <input type="radio" name="discipline-${index}" value="${d}" ${item.discipline === d ? 'checked' : ''}>
+                                <input type="checkbox" name="discipline-${index}" value="${d}" ${isChecked ? 'checked' : ''}>
                                 ${d}
                             </label>
-                        `).join('')}
+                        `}).join('')}
                     </div>
                     <div class="other-input">
                         <input type="text" id="other-discipline-${index}" placeholder="Or type a new discipline...">
@@ -683,19 +723,11 @@
             if (!value) return;
 
             allDisciplines.add(value);
+            saveCustomOptions();
             input.value = '';
             
-            const container = document.getElementById(`disciplines-${index}`);
-            const label = document.createElement('label');
-            label.className = 'checkbox-label';
-            label.innerHTML = `
-                <input type="radio" name="discipline-${index}" value="${value}" checked>
-                ${value}
-            `;
-            label.querySelector('input').addEventListener('change', () => updateItem(index));
-            container.appendChild(label);
-            
-            updateItem(index);
+            // Re-render all cards to show the new discipline option
+            renderImages();
         }
 
         function addClient(index) {
@@ -704,19 +736,11 @@
             if (!value) return;
 
             allClients.add(value);
+            saveCustomOptions();
             input.value = '';
             
-            const container = document.getElementById(`clients-${index}`);
-            const label = document.createElement('label');
-            label.className = 'checkbox-label';
-            label.innerHTML = `
-                <input type="checkbox" name="client-${index}" value="${value}" checked>
-                ${value}
-            `;
-            label.querySelector('input').addEventListener('change', () => updateItem(index));
-            container.appendChild(label);
-            
-            updateItem(index);
+            // Re-render all cards to show the new client option
+            renderImages();
         }
 
         function updateItem(index) {
@@ -725,22 +749,27 @@
             // Update title
             item.title = document.getElementById(`title-${index}`).value.trim();
             
-            const disciplineRadio = document.querySelector(`input[name="discipline-${index}"]:checked`);
-            item.discipline = disciplineRadio ? disciplineRadio.value : '';
+            // Update disciplines (now an array)
+            const disciplineCheckboxes = document.querySelectorAll(`input[name="discipline-${index}"]:checked`);
+            item.discipline = Array.from(disciplineCheckboxes).map(cb => cb.value);
             
+            // Update clients
             const clientCheckboxes = document.querySelectorAll(`input[name="client-${index}"]:checked`);
             item.clients = Array.from(clientCheckboxes).map(cb => cb.value);
             
+            // Update keywords
             const keywordsText = document.getElementById(`keywords-${index}`).value;
             item.keywords = keywordsText
                 .split(',')
                 .map(k => k.trim())
                 .filter(k => k.length > 0);
             
+            // Update sort
             item.sort = parseInt(document.getElementById(`sort-${index}`).value) || 999;
             
+            // Update card completion status
             const card = document.getElementById(`card-${index}`);
-            const isComplete = item.discipline && 
+            const isComplete = item.discipline && item.discipline.length > 0 && 
                               item.clients && item.clients.length > 0 && 
                               item.keywords && item.keywords.length > 0;
             
@@ -757,7 +786,7 @@
         function updateProgress() {
             const total = manifestData.length;
             const completed = manifestData.filter(item => 
-                item.discipline && 
+                item.discipline && item.discipline.length > 0 && 
                 item.clients && item.clients.length > 0 && 
                 item.keywords && item.keywords.length > 0
             ).length;
