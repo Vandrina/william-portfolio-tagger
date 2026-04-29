@@ -14,7 +14,8 @@
       "agency"
     ],
     "keywords": [],
-    "sort": 999
+    "sort": 999,
+    "title": ""
   },
   {
     "file": "images/backgrounds/2. AdAgency.SABI.ZooMap.jpg",
@@ -209,8 +210,8 @@
     "height": 694,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "discipline": "backgrounds",
     "clients": [
       "leapfrog"
@@ -226,8 +227,8 @@
     "height": 694,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "discipline": "backgrounds",
     "clients": [
       "leapfrog"
@@ -803,7 +804,7 @@
     "thumbWidth": 600,
     "thumbHeight": 600,
     "aspectRatio": 1.0004,
-    "thumbAspectRatio": 1.0,
+    "thumbAspectRatio": 1,
     "discipline": "concept-art",
     "clients": [
       "big-fish"
@@ -1888,8 +1889,8 @@
     "height": 500,
     "thumbWidth": 500,
     "thumbHeight": 500,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "discipline": "concept-art",
     "clients": [
       "tech-smart-kids"
@@ -2959,8 +2960,8 @@
     "height": 1000,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "discipline": "illustration",
     "clients": [
       "personal"
@@ -3067,7 +3068,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3101,7 +3104,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3118,7 +3123,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3152,7 +3159,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3169,7 +3178,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3203,7 +3214,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3237,7 +3250,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3271,7 +3286,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3288,7 +3305,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["costume"],
+    "keywords": [
+      "costume"
+    ],
     "sort": 999
   },
   {
@@ -3305,7 +3324,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3339,7 +3360,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3373,7 +3396,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3390,7 +3415,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3407,7 +3434,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3424,7 +3453,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3441,7 +3472,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3458,7 +3491,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3509,7 +3544,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3526,7 +3563,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3543,7 +3582,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3560,7 +3601,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3577,7 +3620,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3594,7 +3639,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["mashup"],
+    "keywords": [
+      "mashup"
+    ],
     "sort": 999
   },
   {
@@ -3611,7 +3658,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3628,7 +3677,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3645,7 +3696,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3662,7 +3715,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3679,7 +3734,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3696,7 +3753,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3713,7 +3772,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3730,7 +3791,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3747,7 +3810,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3764,7 +3829,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3781,7 +3848,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3798,7 +3867,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -3815,7 +3886,9 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": ["onesheet"],
+    "keywords": [
+      "onesheet"
+    ],
     "sort": 999
   },
   {
@@ -5808,9 +5881,9 @@
     "sort": 999
   },
   {
-    "file": "images/toy-design/120. H\u00c9LIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. H\u00c9LIO CASTRONEVES.png",
-    "placeholder": "gallery-blur-placeholders/toy-design/120. H\u00c9LIO CASTRONEVES.png",
+    "file": "images/toy-design/120. HÉLIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HÉLIO CASTRONEVES.png",
+    "placeholder": "gallery-blur-placeholders/toy-design/120. HÉLIO CASTRONEVES.png",
     "width": 2560,
     "height": 1082,
     "thumbWidth": 600,
