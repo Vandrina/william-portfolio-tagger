@@ -351,6 +351,56 @@
             font-weight: 600;
             margin-left: 10px;
         }
+
+        .manage-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            background: #3a3a3c;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .manage-item-text {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+        }
+
+        .manage-item-input {
+            flex: 1;
+            padding: 6px;
+            background: #2c2c2e;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .manage-item-btn {
+            padding: 6px 12px;
+            background: transparent;
+            color: #c8a46e;
+            border: 1px solid #c8a46e;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .manage-item-btn:hover {
+            background: rgba(200, 164, 110, 0.1);
+        }
+
+        .manage-item-btn.delete {
+            color: #ff3b30;
+            border-color: #ff3b30;
+        }
+
+        .manage-item-btn.delete:hover {
+            background: rgba(255, 59, 48, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -391,6 +441,7 @@
 
     <div class="controls hidden" id="controls">
         <button class="btn" onclick="manualSave()">💾 Save Now</button>
+        <button class="btn btn-secondary" onclick="showManageOptions()">⚙️ Manage Custom Options</button>
         <button class="btn btn-secondary" onclick="exportManifest()">⬇️ Download Backup</button>
         <button class="btn btn-secondary" onclick="showHistory()">📜 View History</button>
     </div>
@@ -400,6 +451,35 @@
         <select id="filter-discipline" onchange="filterImages()">
             <option value="">All Disciplines</option>
         </select>
+        
+        <label for="filter-status" style="margin-left: 20px;">Show:</label>
+        <select id="filter-status" onchange="filterImages()">
+            <option value="all">All Images</option>
+            <option value="complete">Complete Only</option>
+            <option value="incomplete">Incomplete Only</option>
+        </select>
+    </div>
+
+    <div class="setup-section hidden" id="manage-options-modal">
+        <h2>Manage Custom Options</h2>
+        <p style="margin-bottom: 20px; color: #999;">Edit or delete custom disciplines, clients, and keywords. Changes apply across all images.</p>
+        
+        <div class="tag-section">
+            <h3>Custom Disciplines</h3>
+            <div id="manage-disciplines-list"></div>
+        </div>
+        
+        <div class="tag-section">
+            <h3>Custom Clients</h3>
+            <div id="manage-clients-list"></div>
+        </div>
+        
+        <div class="tag-section">
+            <h3>Custom Keywords</h3>
+            <div id="manage-keywords-list"></div>
+        </div>
+        
+        <button onclick="closeManageOptions()" style="width: 100%;">Close</button>
     </div>
 
     <div class="container" id="container">
@@ -484,7 +564,8 @@
 
             try {
                 // Load manifest.json from GitHub
-                const response = await fetch(`https://api.github.com/repos/${githubConfig.owner}/${githubConfig.repo}/contents/manifest.json?ref=${githubConfig.branch}`, {
+                const url = `https://api.github.com/repos/${githubConfig.owner}/${githubConfig.repo}/contents/manifest.json?ref=${githubConfig.branch}`;
+                const response = await fetch(url, {
                     headers: {
                         'Authorization': `token ${token}`,
                         'Accept': 'application/vnd.github.v3+json'
@@ -492,7 +573,29 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+                    const errorData = await response.json().catch(() => ({}));
+                    const errorMsg = errorData.message || response.statusText;
+                    
+                    // Log detailed error info for debugging
+                    console.error('GitHub API Error:', {
+                        status: response.status,
+                        url: url,
+                        error: errorMsg,
+                        owner: githubConfig.owner,
+                        repo: githubConfig.repo,
+                        branch: githubConfig.branch
+                    });
+                    
+                    // Provide helpful error messages
+                    let userMessage = `GitHub API error (${response.status}): ${errorMsg}`;
+                    
+                    if (response.status === 404) {
+                        userMessage += `\n\nPossible issues:\n- Repository not found: ${githubConfig.owner}/${githubConfig.repo}\n- manifest.json doesn't exist in the repo\n- Branch "${githubConfig.branch}" doesn't exist`;
+                    } else if (response.status === 401 || response.status === 403) {
+                        userMessage += `\n\nPossible issues:\n- Access token is invalid or expired\n- Token doesn't have "Contents: Read" permission\n- Repository is private and token doesn't have access`;
+                    }
+                    
+                    throw new Error(userMessage);
                 }
 
                 const data = await response.json();
@@ -502,10 +605,21 @@
                 const content = atob(data.content);
                 manifestData = JSON.parse(content);
 
-                // Convert old formats and extract existing options
+                // Migrate and normalize discipline fields
                 manifestData.forEach(item => {
-                    // Convert old string disciplines to arrays
-                    if (item.discipline && typeof item.discipline === 'string') {
+                    // If "disciplines" (plural) exists, use it and delete "discipline" (singular)
+                    if (item.disciplines !== undefined) {
+                        if (typeof item.disciplines === 'string') {
+                            item.discipline = [item.disciplines];
+                        } else if (Array.isArray(item.disciplines)) {
+                            item.discipline = item.disciplines;
+                        } else {
+                            item.discipline = [];
+                        }
+                        delete item.disciplines;
+                    }
+                    // Otherwise convert old string discipline to array
+                    else if (item.discipline && typeof item.discipline === 'string') {
                         item.discipline = [item.discipline];
                     } else if (!item.discipline) {
                         item.discipline = [];
@@ -618,7 +732,6 @@
         }
 
         function filterImages() {
-            currentFilter = document.getElementById('filter-discipline').value;
             renderImages();
         }
 
@@ -626,9 +739,32 @@
             const container = document.getElementById('container');
             container.innerHTML = '';
 
-            const filteredData = currentFilter 
-                ? manifestData.filter(item => item.discipline === currentFilter)
-                : manifestData;
+            const disciplineFilter = document.getElementById('filter-discipline').value;
+            const statusFilter = document.getElementById('filter-status')?.value || 'all';
+            
+            let filteredData = manifestData;
+            
+            // Filter by discipline
+            if (disciplineFilter) {
+                filteredData = filteredData.filter(item => 
+                    item.discipline && item.discipline.includes(disciplineFilter)
+                );
+            }
+            
+            // Filter by completion status
+            if (statusFilter === 'complete') {
+                filteredData = filteredData.filter(item => 
+                    item.discipline && item.discipline.length > 0 && 
+                    item.clients && item.clients.length > 0 && 
+                    item.keywords && item.keywords.length > 0
+                );
+            } else if (statusFilter === 'incomplete') {
+                filteredData = filteredData.filter(item => 
+                    !item.discipline || item.discipline.length === 0 || 
+                    !item.clients || item.clients.length === 0 || 
+                    !item.keywords || item.keywords.length === 0
+                );
+            }
 
             filteredData.forEach((item, index) => {
                 const actualIndex = manifestData.indexOf(item);
@@ -675,7 +811,7 @@
                 </div>
 
                 <div class="tag-section">
-                    <h3>Disciplines (select multiple)</h3>
+                    <h3>Disciplines</h3>
                     <div class="checkbox-group" id="disciplines-${index}">
                         ${Array.from(allDisciplines).map(d => {
                             const isChecked = (Array.isArray(item.discipline) && item.discipline.includes(d)) || 
@@ -694,7 +830,7 @@
                 </div>
 
                 <div class="tag-section">
-                    <h3>Clients (select multiple)</h3>
+                    <h3>Clients</h3>
                     <div class="checkbox-group" id="clients-${index}">
                         ${Array.from(allClients).map(c => `
                             <label class="checkbox-label">
@@ -710,7 +846,7 @@
                 </div>
 
                 <div class="tag-section">
-                    <h3>Keywords (select multiple)</h3>
+                    <h3>Keywords</h3>
                     <div class="checkbox-group" id="keywords-${index}">
                         ${Array.from(allKeywords).sort().map(k => `
                             <label class="checkbox-label">
@@ -728,10 +864,6 @@
                 <div class="tag-section">
                     <h3>Sort Order</h3>
                     <input type="number" class="sort-input" id="sort-${index}" value="${item.sort || 999}">
-                </div>
-                
-                <div class="tag-section">
-                    <button class="btn btn-secondary" onclick="clearImageTags(${index})" style="width: 100%;">Clear All Tags for This Image</button>
                 </div>
             `;
 
@@ -811,19 +943,153 @@
             renderImages();
         }
 
-        function clearImageTags(index) {
-            if (!confirm('Clear all tags for this image? This cannot be undone.')) {
+        function showManageOptions() {
+            document.getElementById('manage-options-modal').classList.remove('hidden');
+            document.getElementById('controls').classList.add('hidden');
+            document.getElementById('filter-section').classList.add('hidden');
+            document.getElementById('container').classList.add('hidden');
+            renderManageOptions();
+        }
+
+        function closeManageOptions() {
+            document.getElementById('manage-options-modal').classList.add('hidden');
+            document.getElementById('controls').classList.remove('hidden');
+            document.getElementById('filter-section').classList.remove('hidden');
+            document.getElementById('container').classList.remove('hidden');
+        }
+
+        function renderManageOptions() {
+            // Get custom options (excluding defaults)
+            const defaultDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
+            const customDisciplines = Array.from(allDisciplines).filter(d => !defaultDisciplines.has(d)).sort();
+            const customClients = Array.from(allClients).sort();
+            const customKeywords = Array.from(allKeywords).sort();
+
+            // Render disciplines
+            const disciplinesList = document.getElementById('manage-disciplines-list');
+            disciplinesList.innerHTML = customDisciplines.length ? 
+                customDisciplines.map(d => createManageItem('discipline', d)).join('') :
+                '<p style="color: #999;">No custom disciplines yet</p>';
+
+            // Render clients
+            const clientsList = document.getElementById('manage-clients-list');
+            clientsList.innerHTML = customClients.length ?
+                customClients.map(c => createManageItem('client', c)).join('') :
+                '<p style="color: #999;">No custom clients yet</p>';
+
+            // Render keywords
+            const keywordsList = document.getElementById('manage-keywords-list');
+            keywordsList.innerHTML = customKeywords.length ?
+                customKeywords.map(k => createManageItem('keyword', k)).join('') :
+                '<p style="color: #999;">No custom keywords yet</p>';
+        }
+
+        function createManageItem(type, value) {
+            const id = `manage-${type}-${value.replace(/[^a-zA-Z0-9]/g, '-')}`;
+            return `
+                <div class="manage-item" id="${id}">
+                    <span class="manage-item-text">${value}</span>
+                    <button class="manage-item-btn" onclick="editOption('${type}', '${value.replace(/'/g, "\\'")}')">✏️ Edit</button>
+                    <button class="manage-item-btn delete" onclick="deleteOption('${type}', '${value.replace(/'/g, "\\'")}')">× Delete</button>
+                </div>
+            `;
+        }
+
+        function editOption(type, oldValue) {
+            const id = `manage-${type}-${oldValue.replace(/[^a-zA-Z0-9]/g, '-')}`;
+            const item = document.getElementById(id);
+            if (!item) return;
+
+            item.innerHTML = `
+                <input type="text" class="manage-item-input" id="edit-input-${id}" value="${oldValue}">
+                <button class="manage-item-btn" onclick="saveOptionEdit('${type}', '${oldValue.replace(/'/g, "\\'")}')">💾 Save</button>
+                <button class="manage-item-btn delete" onclick="renderManageOptions()">Cancel</button>
+            `;
+            
+            document.getElementById(`edit-input-${id}`).focus();
+        }
+
+        function saveOptionEdit(type, oldValue) {
+            const id = `manage-${type}-${oldValue.replace(/[^a-zA-Z0-9]/g, '-')}`;
+            const input = document.getElementById(`edit-input-${id}`);
+            const newValue = input.value.trim();
+
+            if (!newValue || newValue === oldValue) {
+                renderManageOptions();
                 return;
             }
-            
-            const item = manifestData[index];
-            item.title = '';
-            item.discipline = [];
-            item.clients = [];
-            item.keywords = [];
-            item.sort = 999;
-            
+
+            if (!confirm(`Replace all instances of "${oldValue}" with "${newValue}"?\n\nThis will update all images that have this ${type}.`)) {
+                renderManageOptions();
+                return;
+            }
+
+            // Update in the Set
+            if (type === 'discipline') {
+                allDisciplines.delete(oldValue);
+                allDisciplines.add(newValue);
+            } else if (type === 'client') {
+                allClients.delete(oldValue);
+                allClients.add(newValue);
+            } else if (type === 'keyword') {
+                allKeywords.delete(oldValue);
+                allKeywords.add(newValue);
+            }
+
+            // Update in all manifest items
+            manifestData.forEach(item => {
+                if (type === 'discipline' && item.discipline) {
+                    const index = item.discipline.indexOf(oldValue);
+                    if (index !== -1) {
+                        item.discipline[index] = newValue;
+                    }
+                } else if (type === 'client' && item.clients) {
+                    const index = item.clients.indexOf(oldValue);
+                    if (index !== -1) {
+                        item.clients[index] = newValue;
+                    }
+                } else if (type === 'keyword' && item.keywords) {
+                    const index = item.keywords.indexOf(oldValue);
+                    if (index !== -1) {
+                        item.keywords[index] = newValue;
+                    }
+                }
+            });
+
+            saveCustomOptions();
             hasUnsavedChanges = true;
+            renderManageOptions();
+            renderImages();
+        }
+
+        function deleteOption(type, value) {
+            if (!confirm(`Delete "${value}"?\n\nThis will remove it from all images that have this ${type}.`)) {
+                return;
+            }
+
+            // Remove from the Set
+            if (type === 'discipline') {
+                allDisciplines.delete(value);
+            } else if (type === 'client') {
+                allClients.delete(value);
+            } else if (type === 'keyword') {
+                allKeywords.delete(value);
+            }
+
+            // Remove from all manifest items
+            manifestData.forEach(item => {
+                if (type === 'discipline' && item.discipline) {
+                    item.discipline = item.discipline.filter(d => d !== value);
+                } else if (type === 'client' && item.clients) {
+                    item.clients = item.clients.filter(c => c !== value);
+                } else if (type === 'keyword' && item.keywords) {
+                    item.keywords = item.keywords.filter(k => k !== value);
+                }
+            });
+
+            saveCustomOptions();
+            hasUnsavedChanges = true;
+            renderManageOptions();
             renderImages();
         }
 
