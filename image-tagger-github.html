@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Image Tagger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1c1c1e;
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .header {
+            max-width: 1400px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background: #2c2c2e;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            color: #c8a46e;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            background: #3a3a3c;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .status.saving {
+            background: #ff9500;
+            color: #000;
+        }
+
+        .status.saved {
+            background: #30d158;
+            color: #000;
+        }
+
+        .status.error {
+            background: #ff3b30;
+        }
+
+        .progress {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #3a3a3c;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #c8a46e;
+            transition: width 0.3s ease;
+        }
+
+        .setup-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #2c2c2e;
+            border-radius: 8px;
+        }
+
+        .setup-section h2 {
+            color: #c8a46e;
+            margin-bottom: 20px;
+        }
+
+        .setup-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .setup-section input {
+            width: 100%;
+            padding: 12px;
+            background: #3a3a3c;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .setup-section button {
+            width: 100%;
+            padding: 14px;
+            background: #c8a46e;
+            color: #1c1c1e;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .setup-section button:hover {
+            background: #d4b47e;
+            transform: translateY(-1px);
+        }
+
+        .setup-section .help-text {
+            font-size: 13px;
+            color: #999;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .controls {
+            max-width: 1400px;
+            margin: 0 auto 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #c8a46e;
+            color: #1c1c1e;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #d4b47e;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #c8a46e;
+            border: 2px solid #c8a46e;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(200, 164, 110, 0.1);
+        }
+
+        .filter-section {
+            max-width: 1400px;
+            margin: 0 auto 20px;
+            padding: 15px;
+            background: #2c2c2e;
+            border-radius: 8px;
+        }
+
+        .filter-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        .filter-section select {
+            width: 200px;
+            padding: 8px;
+            background: #3a3a3c;
+            color: #fff;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .image-card {
+            background: #2c2c2e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .image-card.complete {
+            border-color: #30d158;
+        }
+
+        .image-header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .thumbnail {
+            flex-shrink: 0;
+            width: 200px;
+            height: 150px;
+            object-fit: contain;
+            background: #1c1c1e;
+            border-radius: 4px;
+        }
+
+        .image-info {
+            flex: 1;
+        }
+
+        .filename {
+            font-size: 14px;
+            color: #c8a46e;
+            margin-bottom: 5px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .current-tags {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .tag-section {
+            margin-bottom: 20px;
+        }
+
+        .tag-section h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #3a3a3c;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 14px;
+        }
+
+        .checkbox-label:hover {
+            background: #4a4a4c;
+        }
+
+        .checkbox-label input[type="checkbox"],
+        .checkbox-label input[type="radio"] {
+            cursor: pointer;
+        }
+
+        .other-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .other-input input {
+            flex: 1;
+            padding: 8px 12px;
+            background: #3a3a3c;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .other-input button {
+            padding: 8px 16px;
+            background: #c8a46e;
+            color: #1c1c1e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .keywords-input {
+            width: 100%;
+            padding: 10px;
+            background: #3a3a3c;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            font-family: inherit;
+            min-height: 60px;
+        }
+
+        .sort-input {
+            width: 100px;
+            padding: 8px;
+            background: #3a3a3c;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .complete-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #30d158;
+            color: #1c1c1e;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Portfolio Image Tagger</h1>
+        <p>Tag your portfolio images with disciplines, clients, and keywords.</p>
+        <div class="status" id="status">Ready to start</div>
+        <div class="progress">
+            <span id="progress-text">0 of 0 images tagged</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setup-section" id="setup-section">
+        <h2>Connect to GitHub</h2>
+        <p style="margin-bottom: 20px; color: #999;">Enter your GitHub repository details to enable auto-save.</p>
+        
+        <label>Repository Owner (username)</label>
+        <input type="text" id="github-owner" placeholder="e.g., yourusername">
+        <div class="help-text">Your GitHub username</div>
+        
+        <label>Repository Name</label>
+        <input type="text" id="github-repo" placeholder="e.g., william-portfolio-tagger">
+        <div class="help-text">The name of the repository containing manifest.json</div>
+        
+        <label>Branch</label>
+        <input type="text" id="github-branch" value="main" placeholder="main">
+        <div class="help-text">Usually "main" or "master"</div>
+        
+        <label>Personal Access Token</label>
+        <input type="password" id="github-token" placeholder="ghp_...">
+        <div class="help-text">
+            Create a fine-grained token at github.com/settings/tokens with Contents: Read and write permissions.
+            <br>This stays in your browser and is never sent anywhere except GitHub.
+        </div>
+        
+        <button onclick="connectGitHub()">Connect & Load Manifest</button>
+    </div>
+
+    <div class="controls hidden" id="controls">
+        <button class="btn" onclick="manualSave()">💾 Save Now</button>
+        <button class="btn btn-secondary" onclick="exportManifest()">⬇️ Download Backup</button>
+        <button class="btn btn-secondary" onclick="showHistory()">📜 View History</button>
+    </div>
+
+    <div class="filter-section hidden" id="filter-section">
+        <label for="filter-discipline">Filter by Discipline:</label>
+        <select id="filter-discipline" onchange="filterImages()">
+            <option value="">All Disciplines</option>
+        </select>
+    </div>
+
+    <div class="container" id="container">
+    </div>
+
+    <script>
+        let manifestData = [];
+        let allDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
+        let allClients = new Set();
+        let currentFilter = '';
+        let githubConfig = {};
+        let autoSaveTimer = null;
+        let hasUnsavedChanges = false;
+        let manifestSHA = null;
+
+        async function connectGitHub() {
+            const owner = document.getElementById('github-owner').value.trim();
+            const repo = document.getElementById('github-repo').value.trim();
+            const branch = document.getElementById('github-branch').value.trim() || 'main';
+            const token = document.getElementById('github-token').value.trim();
+
+            if (!owner || !repo || !token) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            githubConfig = { owner, repo, branch, token };
+            
+            // Save config to localStorage for convenience (except token for security)
+            localStorage.setItem('githubConfig', JSON.stringify({ owner, repo, branch }));
+
+            setStatus('Loading manifest from GitHub...', 'saving');
+
+            try {
+                // Load manifest.json from GitHub
+                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/manifest.json?ref=${branch}`, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                manifestSHA = data.sha;
+                
+                // Decode base64 content
+                const content = atob(data.content);
+                manifestData = JSON.parse(content);
+
+                // Extract existing clients
+                manifestData.forEach(item => {
+                    if (item.clients && Array.isArray(item.clients)) {
+                        item.clients.forEach(client => allClients.add(client));
+                    }
+                });
+
+                document.getElementById('setup-section').classList.add('hidden');
+                document.getElementById('controls').classList.remove('hidden');
+                document.getElementById('filter-section').classList.remove('hidden');
+                
+                populateFilterDropdown();
+                renderImages();
+                updateProgress();
+                setStatus('Connected! Auto-save enabled every 30 seconds.', 'saved');
+
+                // Start auto-save timer
+                startAutoSave();
+
+            } catch (err) {
+                console.error(err);
+                setStatus(`Error: ${err.message}`, 'error');
+                alert(`Failed to load manifest: ${err.message}`);
+            }
+        }
+
+        function setStatus(message, type = '') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = 'status ' + type;
+        }
+
+        function startAutoSave() {
+            // Auto-save every 30 seconds if there are changes
+            autoSaveTimer = setInterval(() => {
+                if (hasUnsavedChanges) {
+                    saveToGitHub();
+                }
+            }, 30000);
+        }
+
+        async function saveToGitHub() {
+            setStatus('Saving to GitHub...', 'saving');
+
+            try {
+                const manifestJSON = JSON.stringify(manifestData, null, 2);
+                const content = btoa(unescape(encodeURIComponent(manifestJSON)));
+
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+                const commitMessage = `Update manifest - ${timestamp}`;
+
+                const response = await fetch(`https://api.github.com/repos/${githubConfig.owner}/${githubConfig.repo}/contents/manifest.json`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: commitMessage,
+                        content: content,
+                        sha: manifestSHA,
+                        branch: githubConfig.branch
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                manifestSHA = data.content.sha;
+                hasUnsavedChanges = false;
+
+                const now = new Date().toLocaleTimeString();
+                setStatus(`✓ Saved to GitHub at ${now}`, 'saved');
+
+            } catch (err) {
+                console.error(err);
+                setStatus(`Save failed: ${err.message}`, 'error');
+            }
+        }
+
+        function manualSave() {
+            saveToGitHub();
+        }
+
+        function populateFilterDropdown() {
+            const select = document.getElementById('filter-discipline');
+            allDisciplines.forEach(discipline => {
+                const option = document.createElement('option');
+                option.value = discipline;
+                option.textContent = discipline;
+                select.appendChild(option);
+            });
+        }
+
+        function filterImages() {
+            currentFilter = document.getElementById('filter-discipline').value;
+            renderImages();
+        }
+
+        function renderImages() {
+            const container = document.getElementById('container');
+            container.innerHTML = '';
+
+            const filteredData = currentFilter 
+                ? manifestData.filter(item => item.discipline === currentFilter)
+                : manifestData;
+
+            filteredData.forEach((item, index) => {
+                const actualIndex = manifestData.indexOf(item);
+                const card = createImageCard(item, actualIndex);
+                container.appendChild(card);
+            });
+        }
+
+        function createImageCard(item, index) {
+            const card = document.createElement('div');
+            card.className = 'image-card';
+            card.id = `card-${index}`;
+            
+            const isComplete = item.discipline && 
+                              item.clients && item.clients.length > 0 && 
+                              item.keywords && item.keywords.length > 0;
+            
+            if (isComplete) {
+                card.classList.add('complete');
+            }
+
+            // Use raw.githubusercontent.com for actual image loading
+            const thumbnailURL = `https://raw.githubusercontent.com/${githubConfig.owner}/${githubConfig.repo}/${githubConfig.branch}/${item.thumbnail || item.file}`;
+            const filename = item.file.split('/').pop();
+
+            card.innerHTML = `
+                <div class="image-header">
+                    <img class="thumbnail" src="${thumbnailURL}" alt="${filename}" onerror="this.style.display='none'">
+                    <div class="image-info">
+                        <div class="filename">${item.file}</div>
+                        <div class="current-tags">
+                            ${item.title ? `Title: ${item.title} | ` : ''}
+                            Discipline: ${item.discipline || 'none'} | 
+                            Clients: ${item.clients && item.clients.length ? item.clients.join(', ') : 'none'} | 
+                            Keywords: ${item.keywords && item.keywords.length ? item.keywords.length + ' keyword(s)' : 'none'}
+                            ${isComplete ? '<span class="complete-badge">✓ COMPLETE</span>' : ''}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tag-section">
+                    <h3>Image Title</h3>
+                    <input type="text" class="keywords-input" id="title-${index}" placeholder="e.g., Dragon Concept Art, Winter Cabin Background" value="${item.title || ''}" style="min-height: auto;">
+                </div>
+
+                <div class="tag-section">
+                    <h3>Discipline (select one)</h3>
+                    <div class="checkbox-group" id="disciplines-${index}">
+                        ${Array.from(allDisciplines).map(d => `
+                            <label class="checkbox-label">
+                                <input type="radio" name="discipline-${index}" value="${d}" ${item.discipline === d ? 'checked' : ''}>
+                                ${d}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="other-input">
+                        <input type="text" id="other-discipline-${index}" placeholder="Or type a new discipline...">
+                        <button onclick="addDiscipline(${index})">Add</button>
+                    </div>
+                </div>
+
+                <div class="tag-section">
+                    <h3>Clients (select multiple)</h3>
+                    <div class="checkbox-group" id="clients-${index}">
+                        ${Array.from(allClients).map(c => `
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="client-${index}" value="${c}" ${item.clients && item.clients.includes(c) ? 'checked' : ''}>
+                                ${c}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="other-input">
+                        <input type="text" id="other-client-${index}" placeholder="Or type a new client...">
+                        <button onclick="addClient(${index})">Add</button>
+                    </div>
+                </div>
+
+                <div class="tag-section">
+                    <h3>Keywords (comma-separated)</h3>
+                    <textarea class="keywords-input" id="keywords-${index}" placeholder="e.g., fantasy, dragon, medieval">${item.keywords && item.keywords.length ? item.keywords.join(', ') : ''}</textarea>
+                </div>
+
+                <div class="tag-section">
+                    <h3>Sort Order</h3>
+                    <input type="number" class="sort-input" id="sort-${index}" value="${item.sort || 999}">
+                </div>
+            `;
+
+            // Add change listeners
+            card.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('change', () => updateItem(index));
+            });
+
+            return card;
+        }
+
+        function addDiscipline(index) {
+            const input = document.getElementById(`other-discipline-${index}`);
+            const value = input.value.trim();
+            if (!value) return;
+
+            allDisciplines.add(value);
+            input.value = '';
+            
+            const container = document.getElementById(`disciplines-${index}`);
+            const label = document.createElement('label');
+            label.className = 'checkbox-label';
+            label.innerHTML = `
+                <input type="radio" name="discipline-${index}" value="${value}" checked>
+                ${value}
+            `;
+            label.querySelector('input').addEventListener('change', () => updateItem(index));
+            container.appendChild(label);
+            
+            updateItem(index);
+        }
+
+        function addClient(index) {
+            const input = document.getElementById(`other-client-${index}`);
+            const value = input.value.trim();
+            if (!value) return;
+
+            allClients.add(value);
+            input.value = '';
+            
+            const container = document.getElementById(`clients-${index}`);
+            const label = document.createElement('label');
+            label.className = 'checkbox-label';
+            label.innerHTML = `
+                <input type="checkbox" name="client-${index}" value="${value}" checked>
+                ${value}
+            `;
+            label.querySelector('input').addEventListener('change', () => updateItem(index));
+            container.appendChild(label);
+            
+            updateItem(index);
+        }
+
+        function updateItem(index) {
+            const item = manifestData[index];
+            
+            // Update title
+            item.title = document.getElementById(`title-${index}`).value.trim();
+            
+            const disciplineRadio = document.querySelector(`input[name="discipline-${index}"]:checked`);
+            item.discipline = disciplineRadio ? disciplineRadio.value : '';
+            
+            const clientCheckboxes = document.querySelectorAll(`input[name="client-${index}"]:checked`);
+            item.clients = Array.from(clientCheckboxes).map(cb => cb.value);
+            
+            const keywordsText = document.getElementById(`keywords-${index}`).value;
+            item.keywords = keywordsText
+                .split(',')
+                .map(k => k.trim())
+                .filter(k => k.length > 0);
+            
+            item.sort = parseInt(document.getElementById(`sort-${index}`).value) || 999;
+            
+            const card = document.getElementById(`card-${index}`);
+            const isComplete = item.discipline && 
+                              item.clients && item.clients.length > 0 && 
+                              item.keywords && item.keywords.length > 0;
+            
+            if (isComplete) {
+                card.classList.add('complete');
+            } else {
+                card.classList.remove('complete');
+            }
+            
+            hasUnsavedChanges = true;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = manifestData.length;
+            const completed = manifestData.filter(item => 
+                item.discipline && 
+                item.clients && item.clients.length > 0 && 
+                item.keywords && item.keywords.length > 0
+            ).length;
+            
+            const percentage = total > 0 ? (completed / total * 100).toFixed(1) : 0;
+            
+            document.getElementById('progress-text').textContent = `${completed} of ${total} images tagged (${percentage}%)`;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+        }
+
+        function exportManifest() {
+            const dataStr = JSON.stringify(manifestData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            const timestamp = new Date().toISOString().slice(0, 10);
+            link.download = `manifest-backup-${timestamp}.json`;
+            link.click();
+            
+            URL.revokeObjectURL(url);
+        }
+
+        function showHistory() {
+            window.open(`https://github.com/${githubConfig.owner}/${githubConfig.repo}/commits/${githubConfig.branch}/manifest.json`, '_blank');
+        }
+
+        // Load saved config on page load
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('githubConfig');
+            if (saved) {
+                const config = JSON.parse(saved);
+                document.getElementById('github-owner').value = config.owner || '';
+                document.getElementById('github-repo').value = config.repo || '';
+                document.getElementById('github-branch').value = config.branch || 'main';
+            }
+        });
+
+        // Clean up timer on page unload
+        window.addEventListener('beforeunload', (e) => {
+            if (hasUnsavedChanges) {
+                e.preventDefault();
+                e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            }
+            if (autoSaveTimer) {
+                clearInterval(autoSaveTimer);
+            }
+        });
+    </script>
+</body>
+</html>
