@@ -3468,13 +3468,12 @@
     "clients": [
       "nickelodeon"
     ],
-    "keywords": [
-      "costume"
-    ],
+    "keywords": [],
     "sort": 999,
     "discipline": [
       "nfts"
-    ]
+    ],
+    "title": ""
   },
   {
     "file": "images/nfts/costume/BoyCostumeGir.jpg",
