@@ -21,15 +21,17 @@
 
         .header {
             max-width: 1400px;
-            margin: 0 auto 30px;
-            padding: 20px;
+            margin: 0 auto 10px;
+            padding: 12px 20px;
             background: #2c2c2e;
             border-radius: 8px;
         }
 
         .header h1 {
             color: #c8a46e;
-            margin-bottom: 10px;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
         }
 
         .status {
@@ -52,6 +54,145 @@
 
         .status.error {
             background: #ff3b30;
+        }
+
+        .sticky-status {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            max-width: 1400px;
+            margin: 0 auto 10px;
+            padding: 10px 20px;
+            background: #2c2c2e;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .status-indicator {
+            font-size: 13px;
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .status-indicator.saving {
+            color: #ff9500;
+        }
+
+        .status-indicator.saved {
+            color: #30d158;
+        }
+
+        .status-indicator.error {
+            color: #ff3b30;
+        }
+
+        .progress-compact {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .progress-text-compact {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+
+        .last-saved {
+            font-size: 12px;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .sticky-controls {
+            position: sticky;
+            top: 60px;
+            z-index: 99;
+            max-width: 1400px;
+            margin: 0 auto 20px;
+            padding: 12px 20px;
+            background: #2c2c2e;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .controls-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select {
+            padding: 6px 10px;
+            background: #3a3a3c;
+            color: #fff;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            font-size: 13px;
+            min-width: 150px;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 6px 12px;
+            background: #3a3a3c;
+            color: #fff;
+            border: 1px solid #4a4a4c;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .search-input::placeholder {
+            color: #666;
+        }
+
+        .btn-compact {
+            padding: 6px 14px;
+            background: #c8a46e;
+            color: #1c1c1e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .btn-compact:hover {
+            background: #d4b47e;
+        }
+
+        .btn-compact.secondary {
+            background: transparent;
+            color: #c8a46e;
+            border: 1px solid #c8a46e;
+        }
+
+        .btn-compact.secondary:hover {
+            background: rgba(200, 164, 110, 0.1);
         }
 
         .progress {
@@ -406,13 +547,41 @@
 <body>
     <div class="header">
         <h1>Portfolio Image Tagger</h1>
-        <p>Tag your portfolio images with disciplines, clients, and keywords.</p>
-        <div class="status" id="status">Ready to start</div>
-        <div class="progress">
-            <span id="progress-text">0 of 0 images tagged</span>
+    </div>
+
+    <div class="sticky-status hidden" id="sticky-status">
+        <div class="status-indicator" id="status-indicator">Ready</div>
+        <div class="progress-compact">
+            <div class="progress-text-compact" id="progress-text-compact">0 of 0 images tagged</div>
             <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                <div class="progress-fill" id="progress-fill-sticky" style="width: 0%"></div>
             </div>
+        </div>
+        <div class="last-saved" id="last-saved">Not saved yet</div>
+    </div>
+
+    <div class="sticky-controls hidden" id="sticky-controls">
+        <div class="controls-row">
+            <div class="filter-group">
+                <select id="filter-discipline" class="filter-select" onchange="filterImages()">
+                    <option value="">All Disciplines</option>
+                </select>
+                <select id="filter-client" class="filter-select" onchange="filterImages()">
+                    <option value="">All Clients</option>
+                </select>
+                <select id="filter-status" class="filter-select" onchange="filterImages()">
+                    <option value="all">All Images</option>
+                    <option value="complete">Complete</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+            </div>
+            <input type="text" id="search-input" class="search-input" placeholder="🔍 Search titles or filenames..." oninput="filterImages()">
+        </div>
+        <div class="controls-row">
+            <button class="btn-compact" onclick="manualSave()">💾 Save Now</button>
+            <button class="btn-compact secondary" onclick="showManageOptions()">⚙️ Manage Options</button>
+            <button class="btn-compact secondary" onclick="exportManifest()">⬇️ Download</button>
+            <button class="btn-compact secondary" onclick="showHistory()">📜 History</button>
         </div>
     </div>
 
@@ -437,27 +606,6 @@
         </div>
         
         <button onclick="connectGitHub()">Connect</button>
-    </div>
-
-    <div class="controls hidden" id="controls">
-        <button class="btn" onclick="manualSave()">💾 Save Now</button>
-        <button class="btn btn-secondary" onclick="showManageOptions()">⚙️ Manage Custom Options</button>
-        <button class="btn btn-secondary" onclick="exportManifest()">⬇️ Download Backup</button>
-        <button class="btn btn-secondary" onclick="showHistory()">📜 View History</button>
-    </div>
-
-    <div class="filter-section hidden" id="filter-section">
-        <label for="filter-discipline">Filter by Discipline:</label>
-        <select id="filter-discipline" onchange="filterImages()">
-            <option value="">All Disciplines</option>
-        </select>
-        
-        <label for="filter-status" style="margin-left: 20px;">Show:</label>
-        <select id="filter-status" onchange="filterImages()">
-            <option value="all">All Images</option>
-            <option value="complete">Complete Only</option>
-            <option value="incomplete">Incomplete Only</option>
-        </select>
     </div>
 
     <div class="setup-section hidden" id="manage-options-modal">
@@ -642,13 +790,13 @@
                 });
 
                 document.getElementById('setup-section').classList.add('hidden');
-                document.getElementById('controls').classList.remove('hidden');
-                document.getElementById('filter-section').classList.remove('hidden');
+                document.getElementById('sticky-status').classList.remove('hidden');
+                document.getElementById('sticky-controls').classList.remove('hidden');
                 
-                populateFilterDropdown();
+                populateFilterDropdowns();
                 renderImages();
                 updateProgress();
-                setStatus('Connected! Auto-save enabled every 30 seconds.', 'saved');
+                updateStatusIndicator('Connected! Auto-save enabled.', 'saved');
 
                 // Start auto-save timer
                 startAutoSave();
@@ -661,9 +809,28 @@
         }
 
         function setStatus(message, type = '') {
-            const statusEl = document.getElementById('status');
+            // Old function - kept for compatibility but now updates sticky status
+            updateStatusIndicator(message, type);
+        }
+
+        function updateStatusIndicator(message, type = '') {
+            const statusEl = document.getElementById('status-indicator');
+            if (!statusEl) return;
+            
             statusEl.textContent = message;
-            statusEl.className = 'status ' + type;
+            statusEl.className = 'status-indicator';
+            if (type) {
+                statusEl.classList.add(type);
+            }
+        }
+
+        function updateLastSaved() {
+            const lastSavedEl = document.getElementById('last-saved');
+            if (!lastSavedEl) return;
+            
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            lastSavedEl.textContent = `Last saved: ${timeStr}`;
         }
 
         function startAutoSave() {
@@ -708,8 +875,8 @@
                 manifestSHA = data.content.sha;
                 hasUnsavedChanges = false;
 
-                const now = new Date().toLocaleTimeString();
-                setStatus(`✓ Saved to GitHub at ${now}`, 'saved');
+                setStatus('✓ Saved', 'saved');
+                updateLastSaved();
 
             } catch (err) {
                 console.error(err);
@@ -721,13 +888,25 @@
             saveToGitHub();
         }
 
-        function populateFilterDropdown() {
-            const select = document.getElementById('filter-discipline');
-            allDisciplines.forEach(discipline => {
+        function populateFilterDropdowns() {
+            // Populate discipline dropdown
+            const disciplineSelect = document.getElementById('filter-discipline');
+            disciplineSelect.innerHTML = '<option value="">All Disciplines</option>';
+            Array.from(allDisciplines).sort().forEach(discipline => {
                 const option = document.createElement('option');
                 option.value = discipline;
                 option.textContent = discipline;
-                select.appendChild(option);
+                disciplineSelect.appendChild(option);
+            });
+
+            // Populate client dropdown
+            const clientSelect = document.getElementById('filter-client');
+            clientSelect.innerHTML = '<option value="">All Clients</option>';
+            Array.from(allClients).sort().forEach(client => {
+                const option = document.createElement('option');
+                option.value = client;
+                option.textContent = client;
+                clientSelect.appendChild(option);
             });
         }
 
@@ -739,8 +918,10 @@
             const container = document.getElementById('container');
             container.innerHTML = '';
 
-            const disciplineFilter = document.getElementById('filter-discipline').value;
+            const disciplineFilter = document.getElementById('filter-discipline')?.value || '';
+            const clientFilter = document.getElementById('filter-client')?.value || '';
             const statusFilter = document.getElementById('filter-status')?.value || 'all';
+            const searchQuery = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
             
             let filteredData = manifestData;
             
@@ -749,6 +930,22 @@
                 filteredData = filteredData.filter(item => 
                     item.discipline && item.discipline.includes(disciplineFilter)
                 );
+            }
+
+            // Filter by client
+            if (clientFilter) {
+                filteredData = filteredData.filter(item => 
+                    item.clients && item.clients.includes(clientFilter)
+                );
+            }
+            
+            // Filter by search query
+            if (searchQuery) {
+                filteredData = filteredData.filter(item => {
+                    const title = (item.title || '').toLowerCase();
+                    const filename = (item.file || '').toLowerCase();
+                    return title.includes(searchQuery) || filename.includes(searchQuery);
+                });
             }
             
             // Filter by completion status
@@ -891,8 +1088,10 @@
             
             input.value = '';
             hasUnsavedChanges = true;
+            updateStatusIndicator('Unsaved changes...', '');
             
-            // Re-render all cards to show the new discipline option
+            // Re-render all cards and update filter dropdowns
+            populateFilterDropdowns();
             renderImages();
         }
 
@@ -912,8 +1111,10 @@
             
             input.value = '';
             hasUnsavedChanges = true;
+            updateStatusIndicator('Unsaved changes...', '');
             
-            // Re-render all cards to show the new client option
+            // Re-render all cards and update filter dropdowns
+            populateFilterDropdowns();
             renderImages();
         }
 
@@ -938,6 +1139,7 @@
             saveCustomOptions();
             input.value = '';
             hasUnsavedChanges = true;
+            updateStatusIndicator('Unsaved changes...', '');
             
             // Re-render all cards to show the new keyword options
             renderImages();
@@ -945,16 +1147,16 @@
 
         function showManageOptions() {
             document.getElementById('manage-options-modal').classList.remove('hidden');
-            document.getElementById('controls').classList.add('hidden');
-            document.getElementById('filter-section').classList.add('hidden');
+            document.getElementById('sticky-status').classList.add('hidden');
+            document.getElementById('sticky-controls').classList.add('hidden');
             document.getElementById('container').classList.add('hidden');
             renderManageOptions();
         }
 
         function closeManageOptions() {
             document.getElementById('manage-options-modal').classList.add('hidden');
-            document.getElementById('controls').classList.remove('hidden');
-            document.getElementById('filter-section').classList.remove('hidden');
+            document.getElementById('sticky-status').classList.remove('hidden');
+            document.getElementById('sticky-controls').classList.remove('hidden');
             document.getElementById('container').classList.remove('hidden');
         }
 
@@ -1127,6 +1329,7 @@
             }
             
             hasUnsavedChanges = true;
+            updateStatusIndicator('Unsaved changes...', '');
             updateProgress();
         }
 
@@ -1139,9 +1342,18 @@
             ).length;
             
             const percentage = total > 0 ? (completed / total * 100).toFixed(1) : 0;
+            const progressText = `${completed} of ${total} tagged (${percentage}%)`;
             
-            document.getElementById('progress-text').textContent = `${completed} of ${total} images tagged (${percentage}%)`;
-            document.getElementById('progress-fill').style.width = percentage + '%';
+            // Update sticky compact progress
+            const progressTextCompact = document.getElementById('progress-text-compact');
+            if (progressTextCompact) {
+                progressTextCompact.textContent = progressText;
+            }
+            
+            const progressFillSticky = document.getElementById('progress-fill-sticky');
+            if (progressFillSticky) {
+                progressFillSticky.style.width = percentage + '%';
+            }
         }
 
         function exportManifest() {
