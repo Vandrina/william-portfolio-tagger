@@ -12,17 +12,14 @@
     "clients": [
       "agency"
     ],
-    "keywords": [
-      "test keyword"
-    ],
+    "keywords": [],
     "sort": 999,
     "title": "",
     "disciplines": [
       "backgrounds"
     ],
     "discipline": [
-      "backgrounds",
-      "test"
+      "backgrounds"
     ]
   },
   {
@@ -42,6 +39,10 @@
     "sort": 999,
     "disciplines": [
       "backgrounds"
+    ],
+    "title": "",
+    "discipline": [
+      "test"
     ]
   },
   {
@@ -6571,9 +6572,9 @@
     ]
   },
   {
-    "file": "images/toy-design/120. HÃÂLIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. HÃÂLIO CASTRONEVES.png",
-    "placeholder": "gallery-blur-placeholders/toy-design/120. HÃÂLIO CASTRONEVES.png",
+    "file": "images/toy-design/120. HÃÂÃÂLIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HÃÂÃÂLIO CASTRONEVES.png",
+    "placeholder": "gallery-blur-placeholders/toy-design/120. HÃÂÃÂLIO CASTRONEVES.png",
     "width": 2560,
     "height": 1082,
     "thumbWidth": 600,
