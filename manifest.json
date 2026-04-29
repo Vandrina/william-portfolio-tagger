@@ -12,7 +12,9 @@
     "clients": [
       "agency"
     ],
-    "keywords": [],
+    "keywords": [
+      "test keyword"
+    ],
     "sort": 999,
     "title": "",
     "disciplines": [
