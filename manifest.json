@@ -245,8 +245,8 @@
     "height": 1920,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "title": "",
     "discipline": [
       "backgrounds"
@@ -265,8 +265,8 @@
     "height": 1920,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "title": "",
     "discipline": [
       "backgrounds"
@@ -944,7 +944,7 @@
     "thumbWidth": 600,
     "thumbHeight": 600,
     "aspectRatio": 1.0005,
-    "thumbAspectRatio": 1.0,
+    "thumbAspectRatio": 1,
     "title": "",
     "discipline": [
       "concept-art"
@@ -2221,8 +2221,8 @@
     "height": 500,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "title": "",
     "discipline": [
       "concept-art"
@@ -3481,8 +3481,8 @@
     "height": 1000,
     "thumbWidth": 600,
     "thumbHeight": 600,
-    "aspectRatio": 1.0,
-    "thumbAspectRatio": 1.0,
+    "aspectRatio": 1,
+    "thumbAspectRatio": 1,
     "title": "",
     "discipline": [
       "illustration"
@@ -6808,8 +6808,8 @@
     "sort": 999
   },
   {
-    "file": "images/toy-design/120. HE\u0301LIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. HE\u0301LIO CASTRONEVES_thumbnail.png",
+    "file": "images/toy-design/120. HÉLIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HÉLIO CASTRONEVES_thumbnail.png",
     "placeholder": null,
     "width": 1920,
     "height": 812,
