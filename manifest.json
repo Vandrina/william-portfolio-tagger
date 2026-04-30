@@ -3585,7 +3585,7 @@
     "thumbAspectRatio": 0.7617,
     "title": "",
     "discipline": [
-      "illustration"
+      "concept-art"
     ],
     "clients": [
       "mystery-society"
@@ -6808,8 +6808,8 @@
     "sort": 999
   },
   {
-    "file": "images/toy-design/120. HÉLIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. HÉLIO CASTRONEVES_thumbnail.png",
+    "file": "images/toy-design/120. HEÌLIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HEÌLIO CASTRONEVES_thumbnail.png",
     "placeholder": null,
     "width": 1920,
     "height": 812,
