@@ -1,6 +1,6 @@
 [
   {
-    "file": "images/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
+    "file": "images/backgrounds/001. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
     "thumbnail": "thumbnails/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
     "width": 1920,
@@ -20,7 +20,7 @@
     "sort": 999
   },
   {
-    "file": "images/backgrounds/2. AdAgency.SABI.ZooMap.jpg",
+    "file": "images/backgrounds/002. AdAgency.SABI.ZooMap.jpg",
     "thumbnail": "thumbnails/backgrounds/2. AdAgency.SABI.ZooMap_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/2. AdAgency.SABI.ZooMap.jpg",
     "width": 1920,
@@ -40,8 +40,8 @@
     "sort": 999
   },
   {
-    "file": "images/backgrounds/3. TechSmartKids.WinterRunner.Portfolio.jpg",
-    "thumbnail": "thumbnails/backgrounds/3. TechSmartKids.WinterRunner.Portfolio_thumbnail.jpg",
+    "file": "images/backgrounds/003. TechSmartKids.WinterRunner.Portfolio.jpg",
+    "thumbnail": "thumbnails/backgrounds/003. TechSmartKids.WinterRunner.Portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/3. TechSmartKids.WinterRunner.Portfolio.jpg",
     "width": 1920,
     "height": 702,
@@ -60,7 +60,7 @@
     "sort": 999
   },
   {
-    "file": "images/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio.jpg",
+    "file": "images/backgrounds/004. AuthorDigital.GlampingCabins_Portfolio.jpg",
     "thumbnail": "thumbnails/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio.jpg",
     "width": 678,
