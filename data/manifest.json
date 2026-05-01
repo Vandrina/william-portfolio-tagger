@@ -2,6 +2,7 @@
   {
     "file": "images/backgrounds/001. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
     "thumbnail": "thumbnails/backgrounds/001. AdAgency.SABI.ItzaZooGalleryScreen_thumbnail.jpg",
+
     "placeholder": "gallery-blur-placeholders/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
     "width": 1920,
     "height": 1189,
@@ -21,6 +22,7 @@
   },
   {
     "file": "images/backgrounds/002. AdAgency.SABI.ZooMap.jpg",
+
     "thumbnail": "thumbnails/backgrounds/002. AdAgency.SABI.ZooMap_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/2. AdAgency.SABI.ZooMap.jpg",
     "width": 1920,
@@ -61,6 +63,7 @@
   },
   {
     "file": "images/backgrounds/004. AuthorDigital.GlampingCabins_Portfolio.jpg",
+
     "thumbnail": "thumbnails/backgrounds/004. AuthorDigital.GlampingCabins_Portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio.jpg",
     "width": 678,
@@ -3585,7 +3588,7 @@
     "thumbAspectRatio": 0.7617,
     "title": "",
     "discipline": [
-      "illustration"
+      "concept-art"
     ],
     "clients": [
       "mystery-society"
@@ -6808,6 +6811,7 @@
     "sort": 999
   },
   {
+
     "file": "images/toy-design/120. HE\u0301LIO CASTRONEVES.png",
     "thumbnail": "thumbnails/toy-design/120. HE\u0301LIO CASTRONEVES_thumbnail.png",
     "placeholder": null,
