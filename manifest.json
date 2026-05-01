@@ -5461,7 +5461,9 @@
     "discipline": [
       "toy-design"
     ],
-    "clients": [],
+    "clients": [
+      "handmade-by-robots"
+    ],
     "keywords": [],
     "sort": 999
   },
@@ -5479,7 +5481,9 @@
     "discipline": [
       "toy-design"
     ],
-    "clients": [],
+    "clients": [
+      "handmade-by-robots"
+    ],
     "keywords": [],
     "sort": 999
   },
