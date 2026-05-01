@@ -14,7 +14,8 @@
       "backgrounds"
     ],
     "clients": [
-      "agency"
+      "agency",
+      "sabi"
     ],
     "keywords": [],
     "sort": 999
@@ -6808,8 +6809,8 @@
     "sort": 999
   },
   {
-    "file": "images/toy-design/120. HE\u0301LIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. HE\u0301LIO CASTRONEVES_thumbnail.png",
+    "file": "images/toy-design/120. HÉLIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HÉLIO CASTRONEVES_thumbnail.png",
     "placeholder": null,
     "width": 1920,
     "height": 812,
