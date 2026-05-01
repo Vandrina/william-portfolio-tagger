@@ -1953,7 +1953,9 @@
       "character-design",
       "concept-art"
     ],
-    "clients": [],
+    "clients": [
+      "agency"
+    ],
     "keywords": [],
     "sort": 999
   },
@@ -1989,6 +1991,7 @@
     "thumbAspectRatio": 0.87,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
