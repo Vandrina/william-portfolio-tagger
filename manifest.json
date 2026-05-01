@@ -609,6 +609,7 @@
     "thumbAspectRatio": 1.7857,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
@@ -631,7 +632,9 @@
     "discipline": [
       "concept-art"
     ],
-    "clients": [],
+    "clients": [
+      "elevated-games"
+    ],
     "keywords": [],
     "sort": 999
   },
