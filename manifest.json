@@ -2379,6 +2379,7 @@
     "thumbAspectRatio": 1.5464,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
@@ -2399,6 +2400,7 @@
     "thumbAspectRatio": 0.9383,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
@@ -2419,7 +2421,9 @@
     "thumbAspectRatio": 0.6667,
     "title": "",
     "discipline": [
-      "concept-art"
+      "character-design",
+      "concept-art",
+      "illustration"
     ],
     "clients": [
       "paramount"
@@ -2439,6 +2443,7 @@
     "thumbAspectRatio": 0.505,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
