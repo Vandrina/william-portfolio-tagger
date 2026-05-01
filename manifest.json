@@ -1909,7 +1909,7 @@
     "thumbAspectRatio": 0.65,
     "title": "",
     "discipline": [
-      "concept-art"
+      "illustration"
     ],
     "clients": [
       "amazon"
@@ -1929,6 +1929,7 @@
     "thumbAspectRatio": 1.8809,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
@@ -1949,6 +1950,7 @@
     "thumbAspectRatio": 0.655,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [],
