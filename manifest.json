@@ -2196,6 +2196,7 @@
     "thumbAspectRatio": 1.3921,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
@@ -2216,6 +2217,7 @@
     "thumbAspectRatio": 1.4286,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
@@ -2256,7 +2258,7 @@
     "thumbAspectRatio": 0.7067,
     "title": "",
     "discipline": [
-      "concept-art"
+      "character-design"
     ],
     "clients": [
       "tech-smart-kids"
