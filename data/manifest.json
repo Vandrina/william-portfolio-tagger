@@ -1,7 +1,7 @@
 [
   {
-    "file": "images/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
-    "thumbnail": "thumbnails/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen_thumbnail.jpg",
+    "file": "images/backgrounds/001. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
+    "thumbnail": "thumbnails/backgrounds/001. AdAgency.SABI.ItzaZooGalleryScreen_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/1. AdAgency.SABI.ItzaZooGalleryScreen.jpg",
     "width": 1920,
     "height": 1189,
@@ -20,8 +20,8 @@
     "sort": 999
   },
   {
-    "file": "images/backgrounds/2. AdAgency.SABI.ZooMap.jpg",
-    "thumbnail": "thumbnails/backgrounds/2. AdAgency.SABI.ZooMap_thumbnail.jpg",
+    "file": "images/backgrounds/002. AdAgency.SABI.ZooMap.jpg",
+    "thumbnail": "thumbnails/backgrounds/002. AdAgency.SABI.ZooMap_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/2. AdAgency.SABI.ZooMap.jpg",
     "width": 1920,
     "height": 1375,
@@ -40,8 +40,8 @@
     "sort": 999
   },
   {
-    "file": "images/backgrounds/3. TechSmartKids.WinterRunner.Portfolio.jpg",
-    "thumbnail": "thumbnails/backgrounds/3. TechSmartKids.WinterRunner.Portfolio_thumbnail.jpg",
+    "file": "images/backgrounds/003. TechSmartKids.WinterRunner.Portfolio.jpg",
+    "thumbnail": "thumbnails/backgrounds/003. TechSmartKids.WinterRunner.Portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/3. TechSmartKids.WinterRunner.Portfolio.jpg",
     "width": 1920,
     "height": 702,
@@ -60,8 +60,8 @@
     "sort": 999
   },
   {
-    "file": "images/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio.jpg",
-    "thumbnail": "thumbnails/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio_thumbnail.jpg",
+    "file": "images/backgrounds/004. AuthorDigital.GlampingCabins_Portfolio.jpg",
+    "thumbnail": "thumbnails/backgrounds/004. AuthorDigital.GlampingCabins_Portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/backgrounds/4. AuthorDigital.GlampingCabins_Portfolio.jpg",
     "width": 678,
     "height": 1920,
@@ -598,8 +598,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/1. Bigfish.SquinionsCharSheet.jpg",
-    "thumbnail": "thumbnails/concept-art/1. Bigfish.SquinionsCharSheet_thumbnail.jpg",
+    "file": "images/concept-art/001. Bigfish.SquinionsCharSheet.jpg",
+    "thumbnail": "thumbnails/concept-art/001. Bigfish.SquinionsCharSheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/1. Bigfish.SquinionsCharSheet.jpg",
     "width": 1920,
     "height": 1075,
@@ -618,8 +618,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/10. ZettonCharSheet_w_turnaround.jpg",
-    "thumbnail": "thumbnails/concept-art/10. ZettonCharSheet_w_turnaround_thumbnail.jpg",
+    "file": "images/concept-art/010. ZettonCharSheet_w_turnaround.jpg",
+    "thumbnail": "thumbnails/concept-art/010. ZettonCharSheet_w_turnaround_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/10. ZettonCharSheet_w_turnaround.jpg",
     "width": 1920,
     "height": 1853,
@@ -636,8 +636,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/11. ElevatedGames.Baltan.jpg",
-    "thumbnail": "thumbnails/concept-art/11. ElevatedGames.Baltan_thumbnail.jpg",
+    "file": "images/concept-art/011. ElevatedGames.Baltan.jpg",
+    "thumbnail": "thumbnails/concept-art/011. ElevatedGames.Baltan_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/11. ElevatedGames.Baltan.jpg",
     "width": 1920,
     "height": 1344,
@@ -656,8 +656,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/12. ElevatedGames.BaltanCharSheet_w_turnaround.jpg",
-    "thumbnail": "thumbnails/concept-art/12. ElevatedGames.BaltanCharSheet_w_turnaround_thumbnail.jpg",
+    "file": "images/concept-art/012. ElevatedGames.BaltanCharSheet_w_turnaround.jpg",
+    "thumbnail": "thumbnails/concept-art/012. ElevatedGames.BaltanCharSheet_w_turnaround_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/12. ElevatedGames.BaltanCharSheet_w_turnaround.jpg",
     "width": 1920,
     "height": 1665,
@@ -676,8 +676,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/13. ElevatedGames.Gomora.jpg",
-    "thumbnail": "thumbnails/concept-art/13. ElevatedGames.Gomora_thumbnail.jpg",
+    "file": "images/concept-art/013. ElevatedGames.Gomora.jpg",
+    "thumbnail": "thumbnails/concept-art/013. ElevatedGames.Gomora_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/13. ElevatedGames.Gomora.jpg",
     "width": 1920,
     "height": 1344,
@@ -696,8 +696,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/14. ElevatedGames.GomoraCharSheet_w_turnaround.jpg",
-    "thumbnail": "thumbnails/concept-art/14. ElevatedGames.GomoraCharSheet_w_turnaround_thumbnail.jpg",
+    "file": "images/concept-art/014. ElevatedGames.GomoraCharSheet_w_turnaround.jpg",
+    "thumbnail": "thumbnails/concept-art/014. ElevatedGames.GomoraCharSheet_w_turnaround_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/14. ElevatedGames.GomoraCharSheet_w_turnaround.jpg",
     "width": 1920,
     "height": 1212,
@@ -716,8 +716,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/15. ElevatedGames.Aboras.jpg",
-    "thumbnail": "thumbnails/concept-art/15. ElevatedGames.Aboras_thumbnail.jpg",
+    "file": "images/concept-art/015. ElevatedGames.Aboras.jpg",
+    "thumbnail": "thumbnails/concept-art/015. ElevatedGames.Aboras_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/15. ElevatedGames.Aboras.jpg",
     "width": 1920,
     "height": 1344,
@@ -736,8 +736,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/16. ElevatedGames.AborasCharSheet_w_turnaround.jpg",
-    "thumbnail": "thumbnails/concept-art/16. ElevatedGames.AborasCharSheet_w_turnaround_thumbnail.jpg",
+    "file": "images/concept-art/016. ElevatedGames.AborasCharSheet_w_turnaround.jpg",
+    "thumbnail": "thumbnails/concept-art/016. ElevatedGames.AborasCharSheet_w_turnaround_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/16. ElevatedGames.AborasCharSheet_w_turnaround.jpg",
     "width": 1920,
     "height": 1852,
@@ -756,8 +756,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/17. ElevatedGames.BanilaCharSheet.jpg",
-    "thumbnail": "thumbnails/concept-art/17. ElevatedGames.BanilaCharSheet_thumbnail.jpg",
+    "file": "images/concept-art/017. ElevatedGames.BanilaCharSheet.jpg",
+    "thumbnail": "thumbnails/concept-art/017. ElevatedGames.BanilaCharSheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/17. ElevatedGames.BanilaCharSheet.jpg",
     "width": 1920,
     "height": 832,
@@ -776,8 +776,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/18. Bigfish.HopeWeathers_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/18. Bigfish.HopeWeathers_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/018. Bigfish.HopeWeathers_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/018. Bigfish.HopeWeathers_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/18. Bigfish.HopeWeathers_posesheet.jpg",
     "width": 1920,
     "height": 1124,
@@ -796,8 +796,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/19. Bigfish.Bo_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/19. Bigfish.Bo_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/019. Bigfish.Bo_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/019. Bigfish.Bo_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/19. Bigfish.Bo_posesheet.jpg",
     "width": 1920,
     "height": 1016,
@@ -816,8 +816,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/2. ElevatedGames.UltramanSketches.jpg",
-    "thumbnail": "thumbnails/concept-art/2. ElevatedGames.UltramanSketches_thumbnail.jpg",
+    "file": "images/concept-art/002. ElevatedGames.UltramanSketches.jpg",
+    "thumbnail": "thumbnails/concept-art/002. ElevatedGames.UltramanSketches_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/2. ElevatedGames.UltramanSketches.jpg",
     "width": 911,
     "height": 1920,
@@ -836,8 +836,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/20. Bigfish.Michael_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/20. Bigfish.Michael_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/020. Bigfish.Michael_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/020. Bigfish.Michael_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/20. Bigfish.Michael_posesheet.jpg",
     "width": 1920,
     "height": 968,
@@ -856,8 +856,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/21. Bigfish.Tilly_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/21. Bigfish.Tilly_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/021. Bigfish.Tilly_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/021. Bigfish.Tilly_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/21. Bigfish.Tilly_posesheet.jpg",
     "width": 1920,
     "height": 734,
@@ -876,8 +876,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/22. Bigfish.WarrenVanDerKampf_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/22. Bigfish.WarrenVanDerKampf_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/022. Bigfish.WarrenVanDerKampf_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/022. Bigfish.WarrenVanDerKampf_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/22. Bigfish.WarrenVanDerKampf_posesheet.jpg",
     "width": 1920,
     "height": 1058,
@@ -896,8 +896,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/23. Bigfish.RoseVanDerKampf_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/23. Bigfish.RoseVanDerKampf_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/023. Bigfish.RoseVanDerKampf_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/023. Bigfish.RoseVanDerKampf_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/23. Bigfish.RoseVanDerKampf_posesheet.jpg",
     "width": 1920,
     "height": 788,
@@ -916,8 +916,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/24. Bigfish.SimonVanDerKampf_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/24. Bigfish.SimonVanDerKampf_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/024. Bigfish.SimonVanDerKampf_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/024. Bigfish.SimonVanDerKampf_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/24. Bigfish.SimonVanDerKampf_posesheet.jpg",
     "width": 1920,
     "height": 1049,
@@ -936,8 +936,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/25. Bigfish.VanDerKampfFamilyPortrait.jpg",
-    "thumbnail": "thumbnails/concept-art/25. Bigfish.VanDerKampfFamilyPortrait_thumbnail.jpg",
+    "file": "images/concept-art/025. Bigfish.VanDerKampfFamilyPortrait.jpg",
+    "thumbnail": "thumbnails/concept-art/025. Bigfish.VanDerKampfFamilyPortrait_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/25. Bigfish.VanDerKampfFamilyPortrait.jpg",
     "width": 1920,
     "height": 1919,
@@ -956,8 +956,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/26. Bigfish.Quint_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/26. Bigfish.Quint_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/026. Bigfish.Quint_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/026. Bigfish.Quint_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/26. Bigfish.Quint_posesheet.jpg",
     "width": 1920,
     "height": 1130,
@@ -976,8 +976,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/27. Bigfish.PaulGibran_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/27. Bigfish.PaulGibran_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/027. Bigfish.PaulGibran_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/027. Bigfish.PaulGibran_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/27. Bigfish.PaulGibran_posesheet.jpg",
     "width": 1920,
     "height": 1356,
@@ -996,8 +996,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/28. Bigfish.Amy_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/28. Bigfish.Amy_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/028. Bigfish.Amy_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/028. Bigfish.Amy_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/28. Bigfish.Amy_posesheet.jpg",
     "width": 1920,
     "height": 702,
@@ -1016,8 +1016,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/29. Bigfish.EnochFabricant_posesheet.jpg",
-    "thumbnail": "thumbnails/concept-art/29. Bigfish.EnochFabricant_posesheet_thumbnail.jpg",
+    "file": "images/concept-art/029. Bigfish.EnochFabricant_posesheet.jpg",
+    "thumbnail": "thumbnails/concept-art/029. Bigfish.EnochFabricant_posesheet_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/29. Bigfish.EnochFabricant_posesheet.jpg",
     "width": 1920,
     "height": 678,
@@ -1036,8 +1036,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/3. ElevatedGames.Ultraman_powerlevelsketches.jpg",
-    "thumbnail": "thumbnails/concept-art/3. ElevatedGames.Ultraman_powerlevelsketches_thumbnail.jpg",
+    "file": "images/concept-art/003. ElevatedGames.Ultraman_powerlevelsketches.jpg",
+    "thumbnail": "thumbnails/concept-art/003. ElevatedGames.Ultraman_powerlevelsketches_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/3. ElevatedGames.Ultraman_powerlevelsketches.jpg",
     "width": 1736,
     "height": 1920,
@@ -1056,8 +1056,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/30. Bigfish.Krigor-Elsa_neutral_separate.jpg",
-    "thumbnail": "thumbnails/concept-art/30. Bigfish.Krigor-Elsa_neutral_separate_thumbnail.jpg",
+    "file": "images/concept-art/030. Bigfish.Krigor-Elsa_neutral_separate.jpg",
+    "thumbnail": "thumbnails/concept-art/030. Bigfish.Krigor-Elsa_neutral_separate_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/30. Bigfish.Krigor-Elsa_neutral_separate.jpg",
     "width": 1920,
     "height": 1901,
@@ -1076,8 +1076,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/31. Bigfish.Krigor-Elsa_all.jpg",
-    "thumbnail": "thumbnails/concept-art/31. Bigfish.Krigor-Elsa_all_thumbnail.jpg",
+    "file": "images/concept-art/031. Bigfish.Krigor-Elsa_all.jpg",
+    "thumbnail": "thumbnails/concept-art/031. Bigfish.Krigor-Elsa_all_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/31. Bigfish.Krigor-Elsa_all.jpg",
     "width": 1268,
     "height": 1920,
@@ -1096,8 +1096,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/32. Bigfish.MerylHathaway_all.jpg",
-    "thumbnail": "thumbnails/concept-art/32. Bigfish.MerylHathaway_all_thumbnail.jpg",
+    "file": "images/concept-art/032. Bigfish.MerylHathaway_all.jpg",
+    "thumbnail": "thumbnails/concept-art/032. Bigfish.MerylHathaway_all_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/32. Bigfish.MerylHathaway_all.jpg",
     "width": 1518,
     "height": 1920,
@@ -1116,8 +1116,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/33. ReflectiveGames.beekeeper1.jpg",
-    "thumbnail": "thumbnails/concept-art/33. ReflectiveGames.beekeeper1_thumbnail.jpg",
+    "file": "images/concept-art/033. ReflectiveGames.beekeeper1.jpg",
+    "thumbnail": "thumbnails/concept-art/033. ReflectiveGames.beekeeper1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/33. ReflectiveGames.beekeeper1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1136,8 +1136,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/34. ReflectiveGames.beekeeper2.jpg",
-    "thumbnail": "thumbnails/concept-art/34. ReflectiveGames.beekeeper2_thumbnail.jpg",
+    "file": "images/concept-art/034. ReflectiveGames.beekeeper2.jpg",
+    "thumbnail": "thumbnails/concept-art/034. ReflectiveGames.beekeeper2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/34. ReflectiveGames.beekeeper2.jpg",
     "width": 1920,
     "height": 1600,
@@ -1156,8 +1156,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/35. ReflectiveGames.beekeeper3.jpg",
-    "thumbnail": "thumbnails/concept-art/35. ReflectiveGames.beekeeper3_thumbnail.jpg",
+    "file": "images/concept-art/035. ReflectiveGames.beekeeper3.jpg",
+    "thumbnail": "thumbnails/concept-art/035. ReflectiveGames.beekeeper3_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/35. ReflectiveGames.beekeeper3.jpg",
     "width": 1920,
     "height": 1600,
@@ -1176,8 +1176,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/36. ReflectiveGames.bomber1.jpg",
-    "thumbnail": "thumbnails/concept-art/36. ReflectiveGames.bomber1_thumbnail.jpg",
+    "file": "images/concept-art/036. ReflectiveGames.bomber1.jpg",
+    "thumbnail": "thumbnails/concept-art/036. ReflectiveGames.bomber1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/36. ReflectiveGames.bomber1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1196,8 +1196,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/37. ReflectiveGames.bomber2.jpg",
-    "thumbnail": "thumbnails/concept-art/37. ReflectiveGames.bomber2_thumbnail.jpg",
+    "file": "images/concept-art/037. ReflectiveGames.bomber2.jpg",
+    "thumbnail": "thumbnails/concept-art/037. ReflectiveGames.bomber2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/37. ReflectiveGames.bomber2.jpg",
     "width": 1920,
     "height": 1600,
@@ -1216,8 +1216,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/38. ReflectiveGames.bomber3.jpg",
-    "thumbnail": "thumbnails/concept-art/38. ReflectiveGames.bomber3_thumbnail.jpg",
+    "file": "images/concept-art/038. ReflectiveGames.bomber3.jpg",
+    "thumbnail": "thumbnails/concept-art/038. ReflectiveGames.bomber3_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/38. ReflectiveGames.bomber3.jpg",
     "width": 1920,
     "height": 1600,
@@ -1236,8 +1236,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/39. ReflectiveGames.bomber4.jpg",
-    "thumbnail": "thumbnails/concept-art/39. ReflectiveGames.bomber4_thumbnail.jpg",
+    "file": "images/concept-art/039. ReflectiveGames.bomber4.jpg",
+    "thumbnail": "thumbnails/concept-art/039. ReflectiveGames.bomber4_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/39. ReflectiveGames.bomber4.jpg",
     "width": 1920,
     "height": 1600,
@@ -1256,8 +1256,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/4. ElevatedGames.FatherofUltra.jpg",
-    "thumbnail": "thumbnails/concept-art/4. ElevatedGames.FatherofUltra_thumbnail.jpg",
+    "file": "images/concept-art/004. ElevatedGames.FatherofUltra.jpg",
+    "thumbnail": "thumbnails/concept-art/004. ElevatedGames.FatherofUltra_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/4. ElevatedGames.FatherofUltra.jpg",
     "width": 1920,
     "height": 1344,
@@ -1276,8 +1276,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/40. ReflectiveGames.bomber5.jpg",
-    "thumbnail": "thumbnails/concept-art/40. ReflectiveGames.bomber5_thumbnail.jpg",
+    "file": "images/concept-art/040. ReflectiveGames.bomber5.jpg",
+    "thumbnail": "thumbnails/concept-art/040. ReflectiveGames.bomber5_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/40. ReflectiveGames.bomber5.jpg",
     "width": 1920,
     "height": 1600,
@@ -1296,8 +1296,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/41. ReflectiveGames.bomber6.jpg",
-    "thumbnail": "thumbnails/concept-art/41. ReflectiveGames.bomber6_thumbnail.jpg",
+    "file": "images/concept-art/041. ReflectiveGames.bomber6.jpg",
+    "thumbnail": "thumbnails/concept-art/041. ReflectiveGames.bomber6_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/41. ReflectiveGames.bomber6.jpg",
     "width": 1920,
     "height": 1600,
@@ -1316,8 +1316,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/42. ReflectiveGames.bomber7.jpg",
-    "thumbnail": "thumbnails/concept-art/42. ReflectiveGames.bomber7_thumbnail.jpg",
+    "file": "images/concept-art/042. ReflectiveGames.bomber7.jpg",
+    "thumbnail": "thumbnails/concept-art/042. ReflectiveGames.bomber7_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/42. ReflectiveGames.bomber7.jpg",
     "width": 1920,
     "height": 1600,
@@ -1336,8 +1336,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/43. ReflectiveGames.bomber8.jpg",
-    "thumbnail": "thumbnails/concept-art/43. ReflectiveGames.bomber8_thumbnail.jpg",
+    "file": "images/concept-art/043. ReflectiveGames.bomber8.jpg",
+    "thumbnail": "thumbnails/concept-art/043. ReflectiveGames.bomber8_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/43. ReflectiveGames.bomber8.jpg",
     "width": 1920,
     "height": 1600,
@@ -1356,8 +1356,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/44. ReflectiveGames.chomper1.jpg",
-    "thumbnail": "thumbnails/concept-art/44. ReflectiveGames.chomper1_thumbnail.jpg",
+    "file": "images/concept-art/044. ReflectiveGames.chomper1.jpg",
+    "thumbnail": "thumbnails/concept-art/044. ReflectiveGames.chomper1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/44. ReflectiveGames.chomper1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1376,8 +1376,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/45. ReflectiveGames.chomper2.jpg",
-    "thumbnail": "thumbnails/concept-art/45. ReflectiveGames.chomper2_thumbnail.jpg",
+    "file": "images/concept-art/045. ReflectiveGames.chomper2.jpg",
+    "thumbnail": "thumbnails/concept-art/045. ReflectiveGames.chomper2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/45. ReflectiveGames.chomper2.jpg",
     "width": 1920,
     "height": 1600,
@@ -1396,8 +1396,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/46. ReflectiveGames.chomper3.jpg",
-    "thumbnail": "thumbnails/concept-art/46. ReflectiveGames.chomper3_thumbnail.jpg",
+    "file": "images/concept-art/046. ReflectiveGames.chomper3.jpg",
+    "thumbnail": "thumbnails/concept-art/046. ReflectiveGames.chomper3_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/46. ReflectiveGames.chomper3.jpg",
     "width": 1920,
     "height": 1600,
@@ -1416,8 +1416,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/47. ReflectiveGames.chomper4.jpg",
-    "thumbnail": "thumbnails/concept-art/47. ReflectiveGames.chomper4_thumbnail.jpg",
+    "file": "images/concept-art/047. ReflectiveGames.chomper4.jpg",
+    "thumbnail": "thumbnails/concept-art/047. ReflectiveGames.chomper4_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/47. ReflectiveGames.chomper4.jpg",
     "width": 1920,
     "height": 1600,
@@ -1436,8 +1436,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/48. ReflectiveGames.dartshooter1.jpg",
-    "thumbnail": "thumbnails/concept-art/48. ReflectiveGames.dartshooter1_thumbnail.jpg",
+    "file": "images/concept-art/048. ReflectiveGames.dartshooter1.jpg",
+    "thumbnail": "thumbnails/concept-art/048. ReflectiveGames.dartshooter1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/48. ReflectiveGames.dartshooter1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1456,8 +1456,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/49. ReflectiveGames.dartshooter2.jpg",
-    "thumbnail": "thumbnails/concept-art/49. ReflectiveGames.dartshooter2_thumbnail.jpg",
+    "file": "images/concept-art/049. ReflectiveGames.dartshooter2.jpg",
+    "thumbnail": "thumbnails/concept-art/049. ReflectiveGames.dartshooter2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/49. ReflectiveGames.dartshooter2.jpg",
     "width": 1920,
     "height": 1600,
@@ -1476,8 +1476,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/5. ElevatedGames.FatherofUltraCharSheet_w_turnaround.jpg",
-    "thumbnail": "thumbnails/concept-art/5. ElevatedGames.FatherofUltraCharSheet_w_turnaround_thumbnail.jpg",
+    "file": "images/concept-art/005. ElevatedGames.FatherofUltraCharSheet_w_turnaround.jpg",
+    "thumbnail": "thumbnails/concept-art/005. ElevatedGames.FatherofUltraCharSheet_w_turnaround_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/5. ElevatedGames.FatherofUltraCharSheet_w_turnaround.jpg",
     "width": 1562,
     "height": 1920,
@@ -1496,8 +1496,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/50. ReflectiveGames.dartshooter3.jpg",
-    "thumbnail": "thumbnails/concept-art/50. ReflectiveGames.dartshooter3_thumbnail.jpg",
+    "file": "images/concept-art/050. ReflectiveGames.dartshooter3.jpg",
+    "thumbnail": "thumbnails/concept-art/050. ReflectiveGames.dartshooter3_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/50. ReflectiveGames.dartshooter3.jpg",
     "width": 1920,
     "height": 1600,
@@ -1516,8 +1516,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/51. ReflectiveGames.dartshooter4.jpg",
-    "thumbnail": "thumbnails/concept-art/51. ReflectiveGames.dartshooter4_thumbnail.jpg",
+    "file": "images/concept-art/051. ReflectiveGames.dartshooter4.jpg",
+    "thumbnail": "thumbnails/concept-art/051. ReflectiveGames.dartshooter4_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/51. ReflectiveGames.dartshooter4.jpg",
     "width": 1920,
     "height": 1600,
@@ -1536,8 +1536,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/52. ReflectiveGames.firedragon1.jpg",
-    "thumbnail": "thumbnails/concept-art/52. ReflectiveGames.firedragon1_thumbnail.jpg",
+    "file": "images/concept-art/052. ReflectiveGames.firedragon1.jpg",
+    "thumbnail": "thumbnails/concept-art/052. ReflectiveGames.firedragon1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/52. ReflectiveGames.firedragon1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1556,8 +1556,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/53. ReflectiveGames.firedragon2.jpg",
-    "thumbnail": "thumbnails/concept-art/53. ReflectiveGames.firedragon2_thumbnail.jpg",
+    "file": "images/concept-art/053. ReflectiveGames.firedragon2.jpg",
+    "thumbnail": "thumbnails/concept-art/053. ReflectiveGames.firedragon2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/53. ReflectiveGames.firedragon2.jpg",
     "width": 1920,
     "height": 1600,
@@ -1576,8 +1576,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/54. ReflectiveGames.orc_rough1.jpg",
-    "thumbnail": "thumbnails/concept-art/54. ReflectiveGames.orc_rough1_thumbnail.jpg",
+    "file": "images/concept-art/054. ReflectiveGames.orc_rough1.jpg",
+    "thumbnail": "thumbnails/concept-art/054. ReflectiveGames.orc_rough1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/54. ReflectiveGames.orc_rough1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1596,8 +1596,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/55. ReflectiveGames.orc_rough3.jpg",
-    "thumbnail": "thumbnails/concept-art/55. ReflectiveGames.orc_rough3_thumbnail.jpg",
+    "file": "images/concept-art/055. ReflectiveGames.orc_rough3.jpg",
+    "thumbnail": "thumbnails/concept-art/055. ReflectiveGames.orc_rough3_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/55. ReflectiveGames.orc_rough3.jpg",
     "width": 1920,
     "height": 1600,
@@ -1616,8 +1616,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/56. ReflectiveGames.orc_rough4.jpg",
-    "thumbnail": "thumbnails/concept-art/56. ReflectiveGames.orc_rough4_thumbnail.jpg",
+    "file": "images/concept-art/056. ReflectiveGames.orc_rough4.jpg",
+    "thumbnail": "thumbnails/concept-art/056. ReflectiveGames.orc_rough4_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/56. ReflectiveGames.orc_rough4.jpg",
     "width": 1920,
     "height": 1600,
@@ -1636,8 +1636,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/57. ReflectiveGames.orc_rough5.jpg",
-    "thumbnail": "thumbnails/concept-art/57. ReflectiveGames.orc_rough5_thumbnail.jpg",
+    "file": "images/concept-art/057. ReflectiveGames.orc_rough5.jpg",
+    "thumbnail": "thumbnails/concept-art/057. ReflectiveGames.orc_rough5_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/57. ReflectiveGames.orc_rough5.jpg",
     "width": 1920,
     "height": 1600,
@@ -1656,8 +1656,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/58. ReflectiveGames.orc_rough6.png",
-    "thumbnail": "thumbnails/concept-art/58. ReflectiveGames.orc_rough6_thumbnail.png",
+    "file": "images/concept-art/058. ReflectiveGames.orc_rough6.png",
+    "thumbnail": "thumbnails/concept-art/058. ReflectiveGames.orc_rough6_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/58. ReflectiveGames.orc_rough6.png",
     "width": 1920,
     "height": 1600,
@@ -1676,8 +1676,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/59. ReflectiveGames.robots1.jpg",
-    "thumbnail": "thumbnails/concept-art/59. ReflectiveGames.robots1_thumbnail.jpg",
+    "file": "images/concept-art/059. ReflectiveGames.robots1.jpg",
+    "thumbnail": "thumbnails/concept-art/059. ReflectiveGames.robots1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/59. ReflectiveGames.robots1.jpg",
     "width": 1920,
     "height": 1600,
@@ -1696,8 +1696,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/6. ElevatedGames.Yillian.jpg",
-    "thumbnail": "thumbnails/concept-art/6. ElevatedGames.Yillian_thumbnail.jpg",
+    "file": "images/concept-art/006. ElevatedGames.Yillian.jpg",
+    "thumbnail": "thumbnails/concept-art/006. ElevatedGames.Yillian_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/6. ElevatedGames.Yillian.jpg",
     "width": 1920,
     "height": 1344,
@@ -1716,8 +1716,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/60. ReflectiveGames.robots2.jpg",
-    "thumbnail": "thumbnails/concept-art/60. ReflectiveGames.robots2_thumbnail.jpg",
+    "file": "images/concept-art/060. ReflectiveGames.robots2.jpg",
+    "thumbnail": "thumbnails/concept-art/060. ReflectiveGames.robots2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/60. ReflectiveGames.robots2.jpg",
     "width": 1920,
     "height": 1600,
@@ -1736,8 +1736,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/61. ReflectiveGames.robots3.jpg",
-    "thumbnail": "thumbnails/concept-art/61. ReflectiveGames.robots3_thumbnail.jpg",
+    "file": "images/concept-art/061. ReflectiveGames.robots3.jpg",
+    "thumbnail": "thumbnails/concept-art/061. ReflectiveGames.robots3_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/61. ReflectiveGames.robots3.jpg",
     "width": 1920,
     "height": 1600,
@@ -1756,8 +1756,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/62. ReflectiveGames.robots4.jpg",
-    "thumbnail": "thumbnails/concept-art/62. ReflectiveGames.robots4_thumbnail.jpg",
+    "file": "images/concept-art/062. ReflectiveGames.robots4.jpg",
+    "thumbnail": "thumbnails/concept-art/062. ReflectiveGames.robots4_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/62. ReflectiveGames.robots4.jpg",
     "width": 1920,
     "height": 1600,
@@ -1776,8 +1776,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/63. BillMcG.FelixFishSketches.jpg",
-    "thumbnail": "thumbnails/concept-art/63. BillMcG.FelixFishSketches_thumbnail.jpg",
+    "file": "images/concept-art/063. BillMcG.FelixFishSketches.jpg",
+    "thumbnail": "thumbnails/concept-art/063. BillMcG.FelixFishSketches_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/63. BillMcG.FelixFishSketches.jpg",
     "width": 1920,
     "height": 1242,
@@ -1796,8 +1796,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/64. Bigfish.gamejam pandas.png",
-    "thumbnail": "thumbnails/concept-art/64. Bigfish.gamejam pandas_thumbnail.png",
+    "file": "images/concept-art/064. Bigfish.gamejam pandas.png",
+    "thumbnail": "thumbnails/concept-art/064. Bigfish.gamejam pandas_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/64. Bigfish.gamejam pandas.png",
     "width": 1053,
     "height": 893,
@@ -1816,8 +1816,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/65. Amazon.BloodsportRally_conceptroughs_w_garage.jpg",
-    "thumbnail": "thumbnails/concept-art/65. Amazon.BloodsportRally_conceptroughs_w_garage_thumbnail.jpg",
+    "file": "images/concept-art/065. Amazon.BloodsportRally_conceptroughs_w_garage.jpg",
+    "thumbnail": "thumbnails/concept-art/065. Amazon.BloodsportRally_conceptroughs_w_garage_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/65. Amazon.BloodsportRally_conceptroughs_w_garage.jpg",
     "width": 1735,
     "height": 1920,
@@ -1836,8 +1836,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/66. Amazon.LivingClassics.Pirates.rough_to_final_comp.jpg",
-    "thumbnail": "thumbnails/concept-art/66. Amazon.LivingClassics.Pirates.rough_to_final_comp_thumbnail.jpg",
+    "file": "images/concept-art/066. Amazon.LivingClassics.Pirates.rough_to_final_comp.jpg",
+    "thumbnail": "thumbnails/concept-art/066. Amazon.LivingClassics.Pirates.rough_to_final_comp_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/66. Amazon.LivingClassics.Pirates.rough_to_final_comp.jpg",
     "width": 1249,
     "height": 1920,
@@ -1856,8 +1856,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/67. Amazon.FloOfTimeRoughs_portfolio.jpg",
-    "thumbnail": "thumbnails/concept-art/67. Amazon.FloOfTimeRoughs_portfolio_thumbnail.jpg",
+    "file": "images/concept-art/067. Amazon.FloOfTimeRoughs_portfolio.jpg",
+    "thumbnail": "thumbnails/concept-art/067. Amazon.FloOfTimeRoughs_portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/67. Amazon.FloOfTimeRoughs_portfolio.jpg",
     "width": 1920,
     "height": 1020,
@@ -1876,8 +1876,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/68. Frank_charactersheets.jpg",
-    "thumbnail": "thumbnails/concept-art/68. Frank_charactersheets_thumbnail.jpg",
+    "file": "images/concept-art/068. Frank_charactersheets.jpg",
+    "thumbnail": "thumbnails/concept-art/068. Frank_charactersheets_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/68. Frank_charactersheets.jpg",
     "width": 1257,
     "height": 1920,
@@ -1894,8 +1894,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/69. Bigfish.FoodRoughs_portfolio.jpg",
-    "thumbnail": "thumbnails/concept-art/69. Bigfish.FoodRoughs_portfolio_thumbnail.jpg",
+    "file": "images/concept-art/069. Bigfish.FoodRoughs_portfolio.jpg",
+    "thumbnail": "thumbnails/concept-art/069. Bigfish.FoodRoughs_portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/69. Bigfish.FoodRoughs_portfolio.jpg",
     "width": 1920,
     "height": 1805,
@@ -1914,8 +1914,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/7. ElevatedGames.YullianCharSheet_w_turnaround.jpg",
-    "thumbnail": "thumbnails/concept-art/7. ElevatedGames.YullianCharSheet_w_turnaround_thumbnail.jpg",
+    "file": "images/concept-art/007. ElevatedGames.YullianCharSheet_w_turnaround.jpg",
+    "thumbnail": "thumbnails/concept-art/007. ElevatedGames.YullianCharSheet_w_turnaround_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/7. ElevatedGames.YullianCharSheet_w_turnaround.jpg",
     "width": 1669,
     "height": 1920,
@@ -1934,8 +1934,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/70. Bigfish.FoodColorRoughs1_portfolio.jpg",
-    "thumbnail": "thumbnails/concept-art/70. Bigfish.FoodColorRoughs1_portfolio_thumbnail.jpg",
+    "file": "images/concept-art/070. Bigfish.FoodColorRoughs1_portfolio.jpg",
+    "thumbnail": "thumbnails/concept-art/070. Bigfish.FoodColorRoughs1_portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/70. Bigfish.FoodColorRoughs1_portfolio.jpg",
     "width": 1460,
     "height": 1920,
@@ -1954,8 +1954,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/71. Bigfish.FoodColorRoughs2_portfolio.jpg",
-    "thumbnail": "thumbnails/concept-art/71. Bigfish.FoodColorRoughs2_portfolio_thumbnail.jpg",
+    "file": "images/concept-art/071. Bigfish.FoodColorRoughs2_portfolio.jpg",
+    "thumbnail": "thumbnails/concept-art/071. Bigfish.FoodColorRoughs2_portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/71. Bigfish.FoodColorRoughs2_portfolio.jpg",
     "width": 1287,
     "height": 1920,
@@ -1974,8 +1974,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/72. Microsoft.Zipie-Zoe_CharSheet_all.jpg",
-    "thumbnail": "thumbnails/concept-art/72. Microsoft.Zipie-Zoe_CharSheet_all_thumbnail.jpg",
+    "file": "images/concept-art/072. Microsoft.Zipie-Zoe_CharSheet_all.jpg",
+    "thumbnail": "thumbnails/concept-art/072. Microsoft.Zipie-Zoe_CharSheet_all_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/72. Microsoft.Zipie-Zoe_CharSheet_all.jpg",
     "width": 1920,
     "height": 1319,
@@ -1994,8 +1994,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/73. AdAgency.AllCreatures.jpg",
-    "thumbnail": "thumbnails/concept-art/73. AdAgency.AllCreatures_thumbnail.jpg",
+    "file": "images/concept-art/073. AdAgency.AllCreatures.jpg",
+    "thumbnail": "thumbnails/concept-art/073. AdAgency.AllCreatures_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/73. AdAgency.AllCreatures.jpg",
     "width": 1920,
     "height": 1795,
@@ -2014,8 +2014,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/74. Microsoft.allcritters2.jpg",
-    "thumbnail": "thumbnails/concept-art/74. Microsoft.allcritters2_thumbnail.jpg",
+    "file": "images/concept-art/074. Microsoft.allcritters2.jpg",
+    "thumbnail": "thumbnails/concept-art/074. Microsoft.allcritters2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/74. Microsoft.allcritters2.jpg",
     "width": 1920,
     "height": 1831,
@@ -2034,8 +2034,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/75. Amazon.Holmes_char_sketches.jpg",
-    "thumbnail": "thumbnails/concept-art/75. Amazon.Holmes_char_sketches_thumbnail.jpg",
+    "file": "images/concept-art/075. Amazon.Holmes_char_sketches.jpg",
+    "thumbnail": "thumbnails/concept-art/075. Amazon.Holmes_char_sketches_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/75. Amazon.Holmes_char_sketches.jpg",
     "width": 1920,
     "height": 1810,
@@ -2054,8 +2054,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/76. Microsoft.LittleCritters.png",
-    "thumbnail": "thumbnails/concept-art/76. Microsoft.LittleCritters_thumbnail.png",
+    "file": "images/concept-art/076. Microsoft.LittleCritters.png",
+    "thumbnail": "thumbnails/concept-art/076. Microsoft.LittleCritters_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/76. Microsoft.LittleCritters.png",
     "width": 867,
     "height": 848,
@@ -2074,8 +2074,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/77. Nordstroms_Beegirls.jpg",
-    "thumbnail": "thumbnails/concept-art/77. Nordstroms_Beegirls_thumbnail.jpg",
+    "file": "images/concept-art/077. Nordstroms_Beegirls.jpg",
+    "thumbnail": "thumbnails/concept-art/077. Nordstroms_Beegirls_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/77. Nordstroms_Beegirls.jpg",
     "width": 1920,
     "height": 1015,
@@ -2094,8 +2094,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/78. Amazon.Frankenstein.png",
-    "thumbnail": "thumbnails/concept-art/78. Amazon.Frankenstein_thumbnail.png",
+    "file": "images/concept-art/078. Amazon.Frankenstein.png",
+    "thumbnail": "thumbnails/concept-art/078. Amazon.Frankenstein_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/78. Amazon.Frankenstein.png",
     "width": 897,
     "height": 733,
@@ -2114,8 +2114,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/79. AdAgency.meansinkoptions2.jpg",
-    "thumbnail": "thumbnails/concept-art/79. AdAgency.meansinkoptions2_thumbnail.jpg",
+    "file": "images/concept-art/079. AdAgency.meansinkoptions2.jpg",
+    "thumbnail": "thumbnails/concept-art/079. AdAgency.meansinkoptions2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/79. AdAgency.meansinkoptions2.jpg",
     "width": 872,
     "height": 626,
@@ -2134,8 +2134,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/8. ElevatedGames.Ultraseven.2.jpg",
-    "thumbnail": "thumbnails/concept-art/8. ElevatedGames.Ultraseven.2_thumbnail.jpg",
+    "file": "images/concept-art/008. ElevatedGames.Ultraseven.2.jpg",
+    "thumbnail": "thumbnails/concept-art/008. ElevatedGames.Ultraseven.2_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/8. ElevatedGames.Ultraseven.2.jpg",
     "width": 1920,
     "height": 1344,
@@ -2154,8 +2154,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/80. AdAgency.Wayans.thugaboosketch.jpg",
-    "thumbnail": "thumbnails/concept-art/80. AdAgency.Wayans.thugaboosketch_thumbnail.jpg",
+    "file": "images/concept-art/080. AdAgency.Wayans.thugaboosketch.jpg",
+    "thumbnail": "thumbnails/concept-art/080. AdAgency.Wayans.thugaboosketch_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/80. AdAgency.Wayans.thugaboosketch.jpg",
     "width": 1920,
     "height": 1347,
@@ -2174,8 +2174,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/81. TechSmartKids.ProfessorPugsworth.forPortfolio1.png",
-    "thumbnail": "thumbnails/concept-art/81. TechSmartKids.ProfessorPugsworth.forPortfolio1_thumbnail.png",
+    "file": "images/concept-art/081. TechSmartKids.ProfessorPugsworth.forPortfolio1.png",
+    "thumbnail": "thumbnails/concept-art/081. TechSmartKids.ProfessorPugsworth.forPortfolio1_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/81. TechSmartKids.ProfessorPugsworth.forPortfolio1.png",
     "width": 480,
     "height": 680,
@@ -2194,8 +2194,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/82. TechSmartKids.WinterRunner.Portfolio.jpg",
-    "thumbnail": "thumbnails/concept-art/82. TechSmartKids.WinterRunner.Portfolio_thumbnail.jpg",
+    "file": "images/concept-art/082. TechSmartKids.WinterRunner.Portfolio.jpg",
+    "thumbnail": "thumbnails/concept-art/082. TechSmartKids.WinterRunner.Portfolio_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/82. TechSmartKids.WinterRunner.Portfolio.jpg",
     "width": 1920,
     "height": 702,
@@ -2214,8 +2214,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/83. TechSmartKids.ButterflyCatcherComp.png",
-    "thumbnail": "thumbnails/concept-art/83. TechSmartKids.ButterflyCatcherComp_thumbnail.png",
+    "file": "images/concept-art/083. TechSmartKids.ButterflyCatcherComp.png",
+    "thumbnail": "thumbnails/concept-art/083. TechSmartKids.ButterflyCatcherComp_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/83. TechSmartKids.ButterflyCatcherComp.png",
     "width": 500,
     "height": 500,
@@ -2234,8 +2234,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/84. TechSmartKids.UnityDemoStill.png",
-    "thumbnail": "thumbnails/concept-art/84. TechSmartKids.UnityDemoStill_thumbnail.png",
+    "file": "images/concept-art/084. TechSmartKids.UnityDemoStill.png",
+    "thumbnail": "thumbnails/concept-art/084. TechSmartKids.UnityDemoStill_thumbnail.png",
     "placeholder": "gallery-blur-placeholders/concept-art/84. TechSmartKids.UnityDemoStill.png",
     "width": 1440,
     "height": 1920,
@@ -2254,8 +2254,8 @@
     "sort": 999
   },
   {
-    "file": "images/concept-art/9. ElevatedGames.Zetton1.jpg",
-    "thumbnail": "thumbnails/concept-art/9. ElevatedGames.Zetton1_thumbnail.jpg",
+    "file": "images/concept-art/009. ElevatedGames.Zetton1.jpg",
+    "thumbnail": "thumbnails/concept-art/009. ElevatedGames.Zetton1_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/concept-art/9. ElevatedGames.Zetton1.jpg",
     "width": 1920,
     "height": 1344,
@@ -3534,8 +3534,8 @@
     "sort": 999
   },
   {
-    "file": "images/illustration/10. ECCC.Grammaandthemonster.final.jpg",
-    "thumbnail": "thumbnails/illustration/10. ECCC.Grammaandthemonster.final_thumbnail.jpg",
+    "file": "images/illustration/010. ECCC.Grammaandthemonster.final.jpg",
+    "thumbnail": "thumbnails/illustration/010. ECCC.Grammaandthemonster.final_thumbnail.jpg",
     "placeholder": "gallery-blur-placeholders/illustration/10. ECCC.Grammaandthemonster.final.jpg",
     "width": 1375,
     "height": 1920,
@@ -6808,8 +6808,8 @@
     "sort": 999
   },
   {
-    "file": "images/toy-design/120. HÉLIO CASTRONEVES.png",
-    "thumbnail": "thumbnails/toy-design/120. HÉLIO CASTRONEVES_thumbnail.png",
+    "file": "images/toy-design/120. HE\u0301LIO CASTRONEVES.png",
+    "thumbnail": "thumbnails/toy-design/120. HE\u0301LIO CASTRONEVES_thumbnail.png",
     "placeholder": null,
     "width": 1920,
     "height": 812,
