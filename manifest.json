@@ -2052,7 +2052,7 @@
     "thumbAspectRatio": 1.4563,
     "title": "",
     "discipline": [
-      "concept-art"
+      "character-design"
     ],
     "clients": [
       "microsoft"
@@ -2072,7 +2072,7 @@
     "thumbAspectRatio": 1.0695,
     "title": "",
     "discipline": [
-      "concept-art"
+      "character-design"
     ],
     "clients": [
       "agency"
@@ -2092,7 +2092,7 @@
     "thumbAspectRatio": 1.049,
     "title": "",
     "discipline": [
-      "concept-art"
+      "character-design"
     ],
     "clients": [
       "microsoft"
@@ -2112,6 +2112,7 @@
     "thumbAspectRatio": 1.0601,
     "title": "",
     "discipline": [
+      "character-design",
       "concept-art"
     ],
     "clients": [
