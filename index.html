@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Image Tagger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --font-head: 'Outfit', system-ui, sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            
+            --bg: #1c1c1e;
+            --bg-2: #222224;
+            --bg-3: #282828;
+            --surface: #242426;
+            --border: #2e2e32;
+            --border-mid: #3a3a3e;
+            --muted: #52525a;
+            --mid: #7a7a84;
+            --text: #d0d0d8;
+            --bright: #eeeef2;
+            --accent: #c8a46e;
+            --accent-dim: #6e5830;
+            --accent-light: #d4b580;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,9 +35,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #1c1c1e;
-            color: #fff;
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
             padding: 20px;
             line-height: 1.6;
         }
@@ -356,6 +379,52 @@
             border-color: #30d158;
         }
 
+        /* Collapse/Expand functionality */
+        .image-card.collapsed .card-body {
+            display: none;
+        }
+
+        .card-header-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .collapse-btn {
+            background: transparent;
+            border: 1px solid var(--border-mid);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .collapse-btn:hover {
+            background: rgba(200, 164, 110, 0.1);
+            border-color: var(--accent);
+        }
+
+        .tag-summary {
+            font-size: 13px;
+            color: var(--mid);
+            margin-top: 8px;
+            font-family: var(--font-body);
+        }
+
+        .image-card.collapsed .tag-summary {
+            display: block;
+        }
+
+        .image-card:not(.collapsed) .tag-summary {
+            display: none;
+        }
+
         .image-header {
             display: flex;
             gap: 20px;
@@ -394,11 +463,13 @@
         }
 
         .tag-section h3 {
+            font-family: var(--font-head);
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #999;
+            color: var(--mid);
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .checkbox-group {
@@ -583,6 +654,8 @@
             <button class="btn-compact secondary" onclick="showManageOptions()">Manage Options</button>
             <button class="btn-compact secondary" onclick="exportManifest()">Download</button>
             <button class="btn-compact secondary" onclick="showHistory()">History</button>
+            <button class="btn-compact secondary" onclick="collapseAll()">⇕ Collapse All</button>
+            <button class="btn-compact secondary" onclick="expandAll()">⇕ Expand All</button>
         </div>
     </div>
 
@@ -987,24 +1060,30 @@
             // Use file path directly (thumbnails not uploaded)
             const imageURL = `https://raw.githubusercontent.com/${githubConfig.owner}/${githubConfig.repo}/${githubConfig.branch}/${item.file}`;
             const filename = item.file.split('/').pop();
+            
+            // Create tag summary for collapsed view
+            const disciplineText = item.discipline && (Array.isArray(item.discipline) ? item.discipline.join(', ') : item.discipline) || 'none';
+            const clientCount = item.clients ? item.clients.length : 0;
+            const keywordCount = item.keywords ? item.keywords.length : 0;
+            const tagSummary = `${disciplineText} • ${clientCount} client${clientCount !== 1 ? 's' : ''} • ${keywordCount} keyword${keywordCount !== 1 ? 's' : ''}`;
 
             card.innerHTML = `
+                <div class="card-header-row">
+                    <button class="collapse-btn" onclick="toggleCollapse(${index})">▼ Collapse</button>
+                    ${isComplete ? '<span class="complete-badge">✓ COMPLETE</span>' : ''}
+                </div>
+                
                 <div class="image-header">
                     <img class="thumbnail" src="${imageURL}" alt="${filename}" onerror="this.style.display='none'">
                     <div class="image-info">
                         <div class="filename">${item.file}</div>
-                        <div class="current-tags">
-                            ${item.title ? `Title: ${item.title} | ` : ''}
-                            Disciplines: ${item.discipline && (Array.isArray(item.discipline) ? item.discipline.length : 1) ? (Array.isArray(item.discipline) ? item.discipline.join(', ') : item.discipline) : 'none'} | 
-                            Clients: ${item.clients && item.clients.length ? item.clients.join(', ') : 'none'} | 
-                            Keywords: ${item.keywords && item.keywords.length ? item.keywords.length + ' keyword(s)' : 'none'}
-                            ${isComplete ? '<span class="complete-badge">✓ COMPLETE</span>' : ''}
-                        </div>
+                        <div class="tag-summary">${tagSummary}</div>
                     </div>
                 </div>
 
-                <div class="tag-section">
-                    <h3>Image Title</h3>
+                <div class="card-body">
+                    <div class="tag-section">
+                        <h3>Image Title</h3>
                     <input type="text" class="keywords-input" id="title-${index}" placeholder="e.g.,  Professional Title that Shows on Hover, Nude Monster Sal, Flesh Eating Slug Named Harry the Seventh" value="${item.title || ''}" style="min-height: auto;">
                 </div>
 
@@ -1054,7 +1133,7 @@
                         `).join('')}
                     </div>
                     <div class="other-input">
-                        <input type="text" id="other-keyword-${index}" placeholder="Or type new keywords...eg incl: yellow, slime, Star Trek, tv show, inktober, or whatever else.">
+                        <input type="text" id="other-keyword-${index}" placeholder="Or new keywords...eg incl: yellow, slime, Star Trek, tv show, inktober, superhero, or whatever else.">
                         <button onclick="addKeyword(${index})">Add</button>
                     </div>
                 </div>
@@ -1062,6 +1141,7 @@
                 <div class="tag-section">
                     <h3>Sort Order</h3>
                     <input type="number" class="sort-input" id="sort-${index}" value="${item.sort || 999}">
+                </div>
                 </div>
             `;
 
@@ -1071,6 +1151,39 @@
             });
 
             return card;
+        }
+
+        function toggleCollapse(index) {
+            const card = document.getElementById(`card-${index}`);
+            const btn = card.querySelector('.collapse-btn');
+            
+            card.classList.toggle('collapsed');
+            
+            if (card.classList.contains('collapsed')) {
+                btn.textContent = '▶ Expand';
+            } else {
+                btn.textContent = '▼ Collapse';
+            }
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.image-card').forEach((card, index) => {
+                if (!card.classList.contains('collapsed')) {
+                    card.classList.add('collapsed');
+                    const btn = card.querySelector('.collapse-btn');
+                    if (btn) btn.textContent = '▶ Expand';
+                }
+            });
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.image-card').forEach((card, index) => {
+                if (card.classList.contains('collapsed')) {
+                    card.classList.remove('collapsed');
+                    const btn = card.querySelector('.collapse-btn');
+                    if (btn) btn.textContent = '▼ Collapse';
+                }
+            });
         }
 
         function addDiscipline(index) {
