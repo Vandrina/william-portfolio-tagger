@@ -84,9 +84,9 @@
             top: 0;
             z-index: 100;
             max-width: 1400px;
-            margin: 0 auto 10px;
-            padding: 10px 20px;
-            background: #2c2c2e;
+            margin: 0 auto 0;
+            padding: 10px 20px 20px 20px;
+            background: var(--bg-3);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -136,7 +136,7 @@
             max-width: 1400px;
             margin: 0 auto 20px;
             padding: 12px 20px;
-            background: #2c2c2e;
+            background: var(--bg-3);
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
@@ -715,6 +715,9 @@
                 <select id="filter-client" class="filter-select" onchange="filterImages()">
                     <option value="">All Clients</option>
                 </select>
+                <select id="filter-keyword" class="filter-select" onchange="filterImages()">
+                    <option value="">All Keywords</option>
+                </select>
                 <select id="filter-status" class="filter-select" onchange="filterImages()">
                     <option value="all">All Images</option>
                     <option value="complete">Complete</option>
@@ -1068,6 +1071,16 @@
                 option.textContent = client;
                 clientSelect.appendChild(option);
             });
+
+            // Populate keyword dropdown
+            const keywordSelect = document.getElementById('filter-keyword');
+            keywordSelect.innerHTML = '<option value="">All Keywords</option>';
+            Array.from(allKeywords).sort().forEach(keyword => {
+                const option = document.createElement('option');
+                option.value = keyword;
+                option.textContent = keyword;
+                keywordSelect.appendChild(option);
+            });
         }
 
         function filterImages() {
@@ -1080,6 +1093,7 @@
 
             const disciplineFilter = document.getElementById('filter-discipline')?.value || '';
             const clientFilter = document.getElementById('filter-client')?.value || '';
+            const keywordFilter = document.getElementById('filter-keyword')?.value || '';
             const statusFilter = document.getElementById('filter-status')?.value || 'all';
             const searchQuery = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
             
@@ -1096,6 +1110,13 @@
             if (clientFilter) {
                 filteredData = filteredData.filter(item => 
                     item.clients && item.clients.includes(clientFilter)
+                );
+            }
+
+            // Filter by keyword
+            if (keywordFilter) {
+                filteredData = filteredData.filter(item => 
+                    item.keywords && item.keywords.includes(keywordFilter)
                 );
             }
             
