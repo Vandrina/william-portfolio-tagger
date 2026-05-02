@@ -84,14 +84,25 @@
             top: 0;
             z-index: 100;
             max-width: 1400px;
-            margin: 0 auto 0;
-            padding: 10px 20px 20px 20px;
+            margin: 0 auto 10px;
+            padding: 10px 20px;
             background: var(--bg-3);
             border-radius: 8px;
             display: flex;
             align-items: center;
             gap: 15px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sticky-status::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: var(--bg-3);
+            z-index: -1;
         }
 
         .status-indicator {
