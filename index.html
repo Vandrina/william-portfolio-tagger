@@ -42,17 +42,6 @@
             line-height: 1.6;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 150px;  /* Covers both sticky bars + gaps */
-            background: var(--bg-3);
-            z-index: 50;  /* Behind sticky bars (which are 99-100) */
-            pointer-events: none;  /* Clicks pass through */
-
         .header {
             max-width: 1400px;
             margin: 0 auto 10px;
@@ -151,6 +140,16 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
+
+            .sticky-controls::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 0;
+                right: 0;
+                height: 10px;
+                background: var(--bg-3);
+            }
 
         .controls-row {
             display: flex;
