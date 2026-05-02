@@ -510,6 +510,7 @@
 
         .manage-item-input {
             flex: 1;
+            min-width: 200px;
             padding: 6px;
             background: #2c2c2e;
             border: 1px solid #4a4a4c;
@@ -1158,8 +1159,12 @@
             document.getElementById('sticky-status').classList.remove('hidden');
             document.getElementById('sticky-controls').classList.remove('hidden');
             document.getElementById('container').classList.remove('hidden');
-        }
 
+            // Re-render images and filters to show changes made in modal
+            populateFilterDropdowns();
+            renderImages();
+        }
+    
         function renderManageOptions() {
             // Get custom options (excluding defaults)
             const defaultDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
@@ -1260,8 +1265,8 @@
 
             saveCustomOptions();
             hasUnsavedChanges = true;
+            updateStatusIndicator('Unsaved changes...', '');
             renderManageOptions();
-            renderImages();
         }
 
         function deleteOption(type, value) {
@@ -1291,8 +1296,8 @@
 
             saveCustomOptions();
             hasUnsavedChanges = true;
+            updateStatusIndicator('Unsaved changes...', '');
             renderManageOptions();
-            renderImages();
         }
 
         function updateItem(index) {
