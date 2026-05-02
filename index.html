@@ -627,6 +627,67 @@
         .manage-item-btn.delete:hover {
             background: rgba(255, 59, 48, 0.1);
         }
+
+        /* Edit Popup Modal */
+        .edit-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .edit-popup-overlay.hidden {
+            display: none;
+        }
+
+        .edit-popup {
+            background: var(--surface);
+            border: 1px solid var(--border-mid);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .edit-popup h3 {
+            font-family: var(--font-head);
+            font-size: 18px;
+            color: var(--bright);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .edit-popup-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-2);
+            border: 1px solid var(--border-mid);
+            border-radius: 6px;
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .edit-popup-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .edit-popup-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
     </style>
 </head>
 <body>
@@ -715,6 +776,18 @@
         </div>
         
         <button onclick="closeManageOptions()" style="width: 100%;">Close</button>
+    </div>
+
+    <!-- Edit Popup Modal -->
+    <div class="edit-popup-overlay hidden" id="edit-popup-overlay" onclick="closeEditPopup()">
+        <div class="edit-popup" onclick="event.stopPropagation()">
+            <h3 id="edit-popup-title">Edit Option</h3>
+            <input type="text" id="edit-popup-input" class="edit-popup-input" placeholder="change it if you must...">
+            <div class="edit-popup-buttons">
+                <button class="btn-compact secondary" onclick="closeEditPopup()">Cancel</button>
+                <button class="btn-compact" onclick="saveEditPopup()">Save</button>
+            </div>
+        </div>
     </div>
 
     <div class="container" id="container">
@@ -1364,36 +1437,57 @@
             `;
         }
 
-        function editOption(type, oldValue) {
-            const id = `manage-${type}-${oldValue.replace(/[^a-zA-Z0-9]/g, '-')}`;
-            const item = document.getElementById(id);
-            if (!item) return;
+        let currentEditType = null;
+        let currentEditOldValue = null;
 
-            item.innerHTML = `
-                <input type="text" class="manage-item-input" id="edit-input-${id}" value="${oldValue}">
-                <button class="manage-item-btn" onclick="saveOptionEdit('${type}', '${oldValue.replace(/'/g, "\\'")}')">Save</button>
-                <button class="manage-item-btn delete" onclick="renderManageOptions()">Cancel</button>
-            `;
+        function editOption(type, oldValue) {
+            currentEditType = type;
+            currentEditOldValue = oldValue;
             
-            document.getElementById(`edit-input-${id}`).focus();
+            // Show popup
+            const overlay = document.getElementById('edit-popup-overlay');
+            const input = document.getElementById('edit-popup-input');
+            const title = document.getElementById('edit-popup-title');
+            
+            title.textContent = `Edit ${type.charAt(0).toUpperCase() + type.slice(0, -1)}`;
+            input.value = oldValue;
+            
+            overlay.classList.remove('hidden');
+            setTimeout(() => input.focus(), 100);
+            
+            // Add Enter key to save
+            input.onkeydown = function(e) {
+                if (e.key === 'Enter') {
+                    saveEditPopup();
+                } else if (e.key === 'Escape') {
+                    closeEditPopup();
+                }
+            };
         }
 
-        function saveOptionEdit(type, oldValue) {
-            const id = `manage-${type}-${oldValue.replace(/[^a-zA-Z0-9]/g, '-')}`;
-            const input = document.getElementById(`edit-input-${id}`);
-            const newValue = input.value.trim();
+        function closeEditPopup() {
+            document.getElementById('edit-popup-overlay').classList.add('hidden');
+            currentEditType = null;
+            currentEditOldValue = null;
+        }
 
-            if (!newValue || newValue === oldValue) {
-                renderManageOptions();
+        function saveEditPopup() {
+            const newValue = document.getElementById('edit-popup-input').value.trim();
+            
+            if (!newValue) {
+                alert('Value cannot be empty');
                 return;
             }
-
-            if (!confirm(`Replace all instances of "${oldValue}" with "${newValue}"?\n\nThis will update all images that have this ${type}.`)) {
-                renderManageOptions();
+            
+            if (newValue === currentEditOldValue) {
+                closeEditPopup();
                 return;
             }
-
-            // Update in the Set
+            
+            const type = currentEditType;
+            const oldValue = currentEditOldValue;
+            
+            // Update in the Sets
             if (type === 'discipline') {
                 allDisciplines.delete(oldValue);
                 allDisciplines.add(newValue);
@@ -1428,7 +1522,13 @@
             saveCustomOptions();
             hasUnsavedChanges = true;
             updateStatusIndicator('Unsaved changes...', '');
+            closeEditPopup();
             renderManageOptions();
+        }
+
+        // OLD saveOptionEdit function - no longer used
+        function saveOptionEdit(type, oldValue) {
+            // Deprecated - now using saveEditPopup() with popup modal instead
         }
 
         function deleteOption(type, value) {
