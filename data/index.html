@@ -379,19 +379,6 @@
             border-color: #30d158;
         }
 
-        .image-card-placeholder {
-            background: var(--surface);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            min-height: 400px;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 0.8; }
-        }
-
         /* Collapse/Expand functionality */
         .image-card.collapsed .card-body {
             display: none;
@@ -731,7 +718,7 @@
         const ACCESS_PASSWORD = 'portfolio';  // Change this to whatever password you want
         
         let manifestData = [];
-        let allDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'nfts', 'toy-design']);
+        let allDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
         let allClients = new Set();
         let allKeywords = new Set();
         let currentFilter = '';
@@ -1050,46 +1037,10 @@
                 );
             }
 
-            // Lazy loading: render cards in batches as user scrolls
-            const INITIAL_LOAD = 30; // Load first 30 cards
-            const LOAD_MORE = 20;    // Load 20 more each time
-            
-            container.innerHTML = '';
-            
-            // Create placeholder cards for all filtered items
             filteredData.forEach((item, index) => {
                 const actualIndex = manifestData.indexOf(item);
-                const placeholder = document.createElement('div');
-                placeholder.className = 'image-card-placeholder';
-                placeholder.id = `placeholder-${actualIndex}`;
-                placeholder.dataset.index = actualIndex;
-                placeholder.dataset.itemData = JSON.stringify(item);
-                placeholder.style.minHeight = '400px'; // Prevent layout shift
-                container.appendChild(placeholder);
-            });
-            
-            // Intersection Observer to lazy load cards
-            let loadedCount = 0;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const placeholder = entry.target;
-                        if (placeholder.classList.contains('image-card-placeholder')) {
-                            const actualIndex = parseInt(placeholder.dataset.index);
-                            const item = JSON.parse(placeholder.dataset.itemData);
-                            const card = createImageCard(item, actualIndex);
-                            placeholder.replaceWith(card);
-                            observer.unobserve(placeholder);
-                        }
-                    }
-                });
-            }, {
-                rootMargin: '400px' // Start loading 400px before card enters viewport
-            });
-            
-            // Observe all placeholders
-            document.querySelectorAll('.image-card-placeholder').forEach(placeholder => {
-                observer.observe(placeholder);
+                const card = createImageCard(item, actualIndex);
+                container.appendChild(card);
             });
         }
 
@@ -1182,7 +1133,7 @@
                         `).join('')}
                     </div>
                     <div class="other-input">
-                        <input type="text" id="other-keyword-${index}" placeholder="Or type new keywords...eg incl: yellow, slime, Star Trek, tv show, inktober, superhero, or whatever else.">
+                        <input type="text" id="other-keyword-${index}" placeholder="Or new keywords...eg incl: yellow, slime, Star Trek, tv show, inktober, superhero, or whatever else.">
                         <button onclick="addKeyword(${index})">Add</button>
                     </div>
                 </div>
@@ -1329,7 +1280,7 @@
     
         function renderManageOptions() {
             // Get custom options (excluding defaults)
-            const defaultDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'nfts', 'toy-design']);
+            const defaultDisciplines = new Set(['backgrounds', 'books', 'character-design', 'concept-art', 'illustration', 'logos', 'NFTs', 'toy-design']);
             const customDisciplines = Array.from(allDisciplines).filter(d => !defaultDisciplines.has(d)).sort();
             const customClients = Array.from(allClients).sort();
             const customKeywords = Array.from(allKeywords).sort();
@@ -1359,7 +1310,7 @@
                 <div class="manage-item" id="${id}">
                     <span class="manage-item-text">${value}</span>
                     <button class="manage-item-btn" onclick="editOption('${type}', '${value.replace(/'/g, "\\'")}')">Edit</button>
-                    <button class="manage-item-btn delete" onclick="deleteOption('${type}', '${value.replace(/'/g, "\\'")}')">Delete</button>
+                    <button class="manage-item-btn delete" onclick="deleteOption('${type}', '${value.replace(/'/g, "\\'")}')">× Delete</button>
                 </div>
             `;
         }
