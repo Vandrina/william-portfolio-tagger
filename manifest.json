@@ -6997,7 +6997,9 @@
     "discipline": [
       "2d-animation"
     ],
-    "clients": [],
+    "clients": [
+      "agency"
+    ],
     "keywords": [],
     "sort": 999,
     "isVideo": true
@@ -7016,7 +7018,9 @@
     "discipline": [
       "2d-animation"
     ],
-    "clients": [],
+    "clients": [
+      "agency"
+    ],
     "keywords": [],
     "sort": 999,
     "isVideo": true
