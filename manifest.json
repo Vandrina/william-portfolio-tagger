@@ -7079,7 +7079,9 @@
     "discipline": [
       "2d-animation"
     ],
-    "clients": [],
+    "clients": [
+      "microsoft"
+    ],
     "keywords": [],
     "sort": 999,
     "isVideo": true
