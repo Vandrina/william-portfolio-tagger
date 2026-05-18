@@ -1480,8 +1480,7 @@
     "title": "",
     "discipline": [
       "character-design",
-      "concept-art",
-      "childrens-art"
+      "concept-art"
     ],
     "clients": [
       "reflective-games"
@@ -1881,7 +1880,8 @@
     "title": "",
     "discipline": [
       "character-design",
-      "concept-art"
+      "concept-art",
+      "childrens-art"
     ],
     "clients": [
       "big-fish"
@@ -1941,7 +1941,8 @@
     "thumbAspectRatio": 0.65,
     "title": "",
     "discipline": [
-      "illustration"
+      "illustration",
+      "childrens-art"
     ],
     "clients": [
       "amazon"
